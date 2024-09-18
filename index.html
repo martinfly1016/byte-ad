@@ -216,14 +216,14 @@
             }
         }
 
-        // 当页面加载完成时设置初始语言
+        // 当页面加载完成时设置初始语言并添加事件监听器
         document.addEventListener('DOMContentLoaded', function() {
             updateContent('zh');
-        });
-
-        // 监听语言选择的变化
-        document.getElementById('language-selector').addEventListener('change', function() {
-            updateContent(this.value);
+            
+            // 监听语言选择的变化
+            document.getElementById('language-selector').addEventListener('change', function() {
+                updateContent(this.value);
+            });
         });
     </script>
 </head>
