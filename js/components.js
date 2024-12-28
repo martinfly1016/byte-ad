@@ -11,11 +11,9 @@ const COMPONENTS = {
                     <select id="language-selector">
                         <option value="zh">中文</option>
                         <option value="en">EN</option>
-                        <option value="ja">日本語</option>
+                        <option value="ja">JP</option>
                     </select>
-                    <button class="menu-toggle" aria-label="Toggle menu">
-                        ☰
-                    </button>
+                    <button type="button" class="menu-toggle" aria-label="Toggle menu">☰</button>
                 </div>
                 <ul>
                     ${config.navigation.map(item => `

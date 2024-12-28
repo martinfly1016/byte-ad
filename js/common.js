@@ -84,46 +84,64 @@ function setActiveNavItem() {
 // 当 DOM 加载完成后执行
 document.addEventListener('DOMContentLoaded', initializeComponents); 
 
-// 添加菜单切换功能
+// 菜单处理函数
 function initMobileMenu() {
     const menuToggle = document.querySelector('.menu-toggle');
     const navMenu = document.querySelector('nav ul');
     const body = document.body;
-    
+    let isMenuOpen = false;
+
     if (menuToggle && navMenu) {
-        menuToggle.addEventListener('click', (e) => {
+        // 菜单切换事件
+        menuToggle.addEventListener('click', function(e) {
+            e.preventDefault();
             e.stopPropagation();
-            navMenu.classList.toggle('active');
-            body.classList.toggle('menu-open');
+            isMenuOpen = !isMenuOpen;
+            
+            if (isMenuOpen) {
+                navMenu.classList.add('active');
+                body.style.overflow = 'hidden';
+                menuToggle.innerHTML = '✕'; // 切换为关闭图标
+            } else {
+                navMenu.classList.remove('active');
+                body.style.overflow = '';
+                menuToggle.innerHTML = '☰'; // 切换回汉堡图标
+            }
         });
 
         // 点击菜单项关闭菜单
         navMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
+            link.addEventListener('click', function(e) {
                 navMenu.classList.remove('active');
-                body.classList.remove('menu-open');
+                body.style.overflow = '';
+                menuToggle.innerHTML = '☰';
+                isMenuOpen = false;
             });
         });
 
         // 点击页面其他区域关闭菜单
-        document.addEventListener('click', (e) => {
-            if (!e.target.closest('nav')) {
+        document.addEventListener('click', function(e) {
+            if (isMenuOpen && !e.target.closest('nav')) {
                 navMenu.classList.remove('active');
-                body.classList.remove('menu-open');
+                body.style.overflow = '';
+                menuToggle.innerHTML = '☰';
+                isMenuOpen = false;
             }
         });
 
         // 监听窗口大小变化
-        window.addEventListener('resize', () => {
+        window.addEventListener('resize', function() {
             if (window.innerWidth > 768) {
                 navMenu.classList.remove('active');
-                body.classList.remove('menu-open');
+                body.style.overflow = '';
+                menuToggle.innerHTML = '☰';
+                isMenuOpen = false;
             }
         });
     }
 }
 
-// 在页面加载完成后初始化
-document.addEventListener('DOMContentLoaded', () => {
+// 确保在 DOM 加载完成后初始化菜单
+document.addEventListener('DOMContentLoaded', function() {
     initMobileMenu();
 }); 

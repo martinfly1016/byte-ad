@@ -13,6 +13,7 @@ nav {
     width: 100%;
     top: 0;
     z-index: 1000;
+    height: 60px;
 }
 
 nav .container {
@@ -148,7 +149,7 @@ footer {
         #1a237e,  /* 深蓝色 */
         #283593,  /* 靛蓝色 */
         #3949ab,  /* 蓝色 */
-        #1e88e5,  /* 亮��色 */
+        #1e88e5,  /* 亮蓝色 */
         #039be5,  /* 浅蓝色 */
         #1e88e5,  /* 亮蓝色 */
         #3949ab,  /* 蓝色 */
@@ -813,7 +814,7 @@ html {
     transition: opacity 0.3s ease;
 }
 
-/* 打印样式 */
+/* ��印样式 */
 @media print {
     .site-logo img,
     .footer-logo img {
@@ -976,5 +977,49 @@ html {
 
     .stats-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* 移动端导航样式 */
+@media (max-width: 768px) {
+    nav {
+        height: 50px;
+    }
+
+    /* 导航菜单容器 */
+    nav ul {
+        display: none; /* 默认隐藏 */
+        position: fixed;
+        top: 50px;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 50px);
+        background-color: #333;
+        padding: 0;
+        margin: 0;
+        flex-direction: column;
+        overflow-y: auto;
+        z-index: 999; /* 确保菜单在其他内容之上 */
+    }
+
+    /* 显示菜单时的样式 */
+    nav ul.active {
+        display: flex !important; /* 使用 !important 确保显示 */
+    }
+
+    /* 汉堡菜单按钮样式 */
+    .menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 24px;
+        cursor: pointer;
+        padding: 5px 10px;
+        z-index: 1001;
+    }
+
+    .menu-toggle:focus {
+        outline: none;
     }
 } 
