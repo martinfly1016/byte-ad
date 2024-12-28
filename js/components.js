@@ -7,19 +7,21 @@ const COMPONENTS = {
                     <img src="images/logo.png" alt="ByteAd Logo">
                     <h1>${config.site.name}</h1>
                 </a>
-                <button class="menu-toggle" aria-label="Toggle menu">
-                    ☰
-                </button>
+                <div class="nav-tools">
+                    <select id="language-selector">
+                        <option value="zh">中文</option>
+                        <option value="en">EN</option>
+                        <option value="ja">日本語</option>
+                    </select>
+                    <button class="menu-toggle" aria-label="Toggle menu">
+                        ☰
+                    </button>
+                </div>
                 <ul>
                     ${config.navigation.map(item => `
                         <li><a href="${item.url}" class="${item.class}" data-i18n="nav.${item.class}">${item.text}</a></li>
                     `).join('')}
                 </ul>
-                <select id="language-selector">
-                    <option value="zh">中文</option>
-                    <option value="en">English</option>
-                    <option value="ja">日本語</option>
-                </select>
             </div>
         </nav>
     `,

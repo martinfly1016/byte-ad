@@ -148,7 +148,7 @@ footer {
         #1a237e,  /* 深蓝色 */
         #283593,  /* 靛蓝色 */
         #3949ab,  /* 蓝色 */
-        #1e88e5,  /* 亮蓝色 */
+        #1e88e5,  /* 亮��色 */
         #039be5,  /* 浅蓝色 */
         #1e88e5,  /* 亮蓝色 */
         #3949ab,  /* 蓝色 */
@@ -344,18 +344,69 @@ footer {
     background: #2980b9;
 }
 
-/* 语言选择器样式 */
+/* 语言选择器基础样式 */
 #language-selector {
-    padding: 0.5rem;
-    border-radius: 5px;
-    border: 1px solid #fff;
-    background: transparent;
+    background-color: transparent;
     color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    padding: 5px 20px 5px 10px;  /* 右侧留出箭头空间 */
+    font-size: 14px;
     cursor: pointer;
+    appearance: none;  /* 移除默认的下拉箭头 */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 80px;  /* 固定宽度 */
+    position: relative;
 }
 
+/* 自定义下拉箭头 */
+#language-selector {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3E%3Cpath fill='%23ffffff' d='M0 2l4 4 4-4z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    background-size: 8px;
+}
+
+/* 移动端优化 */
+@media (max-width: 768px) {
+    #language-selector {
+        width: 60px;  /* 移动端更窄 */
+        padding: 5px 18px 5px 5px;  /* 减小内边距 */
+        font-size: 12px;  /* 更小的字体 */
+        margin-left: 10px;  /* 与汉堡菜单保持距离 */
+    }
+
+    /* 确保语言选择器和汉堡菜单在同一行 */
+    nav .container {
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* Logo 区域调整 */
+    .site-logo {
+        flex-shrink: 1;  /* 允许 logo 区域在需要时缩小 */
+        margin-right: 10px;  /* 与其他元素保持距离 */
+    }
+
+    /* 右侧工具栏容器 */
+    .nav-tools {
+        display: flex;
+        align-items: center;
+        gap: 10px;  /* 工具之间的间距 */
+    }
+}
+
+/* 语言选择器悬停和焦点状态 */
+#language-selector:hover,
+#language-selector:focus {
+    border-color: rgba(255, 255, 255, 0.5);
+    outline: none;
+}
+
+/* 选项样式 */
 #language-selector option {
-    background: #333;
+    background-color: #333;
     color: white;
 }
 
