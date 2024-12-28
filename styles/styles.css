@@ -351,7 +351,7 @@ footer {
     color: white;
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 4px;
-    padding: 5px 20px 5px 10px;  /* 右侧留���箭头空间 */
+    padding: 5px 20px 5px 10px;  /* 右侧留箭头空间 */
     font-size: 14px;
     cursor: pointer;
     appearance: none;  /* 移除默认的下拉箭头 */
@@ -696,7 +696,7 @@ html {
         display: block;
     }
 
-    /* 导航菜单样式调整 */
+    /* 导��菜单样式调整 */
     nav .container {
         flex-wrap: nowrap;
         padding: 0.5rem 1rem;
@@ -872,20 +872,36 @@ html {
 }
 
 .case-image {
-    position: relative;
     width: 100%;
-    /* 使用 padding-top 来创建固定的宽高比 16:9 */
-    padding-top: 56.25%; /* 16:9 的宽高比 */
+    height: auto;
     overflow: hidden;
 }
 
 .case-image img {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
-    height: 100%;
-    object-fit: cover; /* 确保图片填充整个容器且不变形 */
+    height: auto;
+    display: block; /* 移除图片底部的间隙 */
+    transition: transform 0.3s ease; /* 添加平滑过渡效果 */
+}
+
+/* 可选：添加图片悬停效果 */
+.case-card:hover .case-image img {
+    transform: scale(1.05); /* 鼠标悬停时轻微放大 */
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .case-image {
+        max-width: 100%;
+    }
+}
+
+/* 设置最大宽度以确保图片质量 */
+@media (min-width: 1200px) {
+    .case-image {
+        max-width: 600px; /* 限制最大宽度 */
+        margin: 0 auto;
+    }
 }
 
 .case-content {
