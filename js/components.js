@@ -4,12 +4,15 @@ const COMPONENTS = {
         <nav>
             <div class="container">
                 <h1>${config.site.name}</h1>
+                <button class="menu-toggle" aria-label="Toggle menu">
+                    ☰
+                </button>
                 <ul>
-                    <li><a href="index.html" data-i18n="nav.home">首页</a></li>
-                    <li><a href="about.html" data-i18n="nav.about">关于我们</a></li>
-                    <li><a href="services.html" data-i18n="nav.services">产品与服务</a></li>
-                    <li><a href="#cases" data-i18n="nav.cases">成功案例</a></li>
-                    <li><a href="#contact" data-i18n="nav.contact">联系我们</a></li>
+                    <li><a href="index.html" class="home" data-i18n="nav.home">首页</a></li>
+                    <li><a href="about.html" class="about" data-i18n="nav.about">关于我们</a></li>
+                    <li><a href="services.html" class="services" data-i18n="nav.services">产品与服务</a></li>
+                    <li><a href="#cases" class="cases" data-i18n="nav.cases">成功案例</a></li>
+                    <li><a href="#contact" class="contact" data-i18n="nav.contact">联系我们</a></li>
                 </ul>
                 <select id="language-selector">
                     <option value="zh">中文</option>

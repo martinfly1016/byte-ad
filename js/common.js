@@ -69,6 +69,7 @@ function initializeComponents() {
     renderComponent('header', COMPONENTS.header, CONFIG);
     renderComponent('footer', COMPONENTS.footer, CONFIG);
     initializeLanguage();
+    initMobileMenu();
 }
 
 // 设置当前页面的活动导航项
@@ -82,3 +83,29 @@ function setActiveNavItem() {
 
 // 当 DOM 加载完成后执行
 document.addEventListener('DOMContentLoaded', initializeComponents); 
+
+// 添加菜单切换功能
+function initMobileMenu() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('nav ul');
+    
+    if (menuToggle && navMenu) {
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // 点击菜单项后关闭菜单
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // 点击页面其他区域关闭菜单
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('nav')) {
+                navMenu.classList.remove('active');
+            }
+        });
+    }
+} 
