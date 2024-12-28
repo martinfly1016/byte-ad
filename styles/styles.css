@@ -135,23 +135,23 @@ footer {
     padding: 8rem 0 4rem;
     text-align: center;
     margin-bottom: 3rem;
-    background-size: 400%;
+    background-size: 300%;
     animation: gradientBG 15s ease infinite;
     background-image: linear-gradient(
         45deg,
-        #2c3e50,  /* 深蓝色 */
-        #3498db,  /* 蓝色 */
-        #2ecc71,  /* 绿色 */
-        #e74c3c,  /* 红色 */
-        #f1c40f,  /* 黄色 */
-        #9b59b6,  /* 紫色 */
-        #1abc9c,  /* 青色 */
-        #e67e22,  /* 橙色 */
-        #2c3e50   /* 回到起始颜色，形成循环 */
+        #1a237e,  /* 深蓝色 */
+        #283593,  /* 靛蓝色 */
+        #3949ab,  /* 蓝色 */
+        #1e88e5,  /* 亮蓝色 */
+        #039be5,  /* 浅蓝色 */
+        #1e88e5,  /* 亮蓝色 */
+        #3949ab,  /* 蓝色 */
+        #283593,  /* 靛蓝色 */
+        #1a237e   /* 回到深蓝色 */
     );
 }
 
-/* 添加渐变动画 */
+/* 优化渐变动画 */
 @keyframes gradientBG {
     0% {
         background-position: 0% 50%;
@@ -164,35 +164,35 @@ footer {
     }
 }
 
-/* 添加文字动画效果 */
+/* 文字效果 */
 .page-hero h1 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
-    animation: fadeInDown 1s ease, glowText 2s ease-in-out infinite;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    animation: fadeInDown 1s ease, glowText 3s ease-in-out infinite;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
 
 .page-hero p {
     font-size: 1.2rem;
-    animation: fadeInUp 1s ease 0.5s both, glowText 2s ease-in-out infinite 1s;
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+    animation: fadeInUp 1s ease 0.5s both;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
 }
 
-/* 添加文字发光动画 */
+/* 优化文字发光动画 */
 @keyframes glowText {
     0% {
-        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
     }
     50% {
-        text-shadow: 0 0 20px rgba(255, 255, 255, 0.8),
-                     0 0 30px rgba(255, 255, 255, 0.6);
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.5),
+                     0 0 30px rgba(33, 150, 243, 0.5);
     }
     100% {
-        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
     }
 }
 
-/* 添加悬浮效果 */
+/* 添加微妙的叠加效果 */
 .page-hero::before {
     content: '';
     position: absolute;
@@ -200,7 +200,9 @@ footer {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.2);
+    background: radial-gradient(circle at center, 
+                rgba(255, 255, 255, 0.1) 0%, 
+                rgba(0, 0, 0, 0.1) 100%);
     pointer-events: none;
 }
 
@@ -208,11 +210,6 @@ footer {
 .page-hero .container {
     position: relative;
     z-index: 1;
-}
-
-/* 添加交互效果 */
-.page-hero:hover {
-    animation-play-state: paused;
 }
 
 /* 响应式调整 */
