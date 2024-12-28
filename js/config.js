@@ -3,13 +3,13 @@ const CONFIG = {
     site: {
         name: 'ByteAd',
         title: '数字营销专家',
-        copyright: '2023 ByteAd. 保留所有权利。'
+        copyright: '2024 ByteAd. 保留所有权利。'
     },
 
     // 联系方式
     contact: {
-        email: 'info@bytead.com',
-        phone: '+86 123 4567 8900',
+        email: 'yuchao@bytead.com',
+        phone: '+81090-67022476',
         address: '日本东京都墨田区吾妻桥2-16-5 1楼'
     },
 
