@@ -83,6 +83,152 @@
         .service-item h3 {
             color: #333;
         }
+
+        /* 服务页面特定样式 */
+        .services-hero {
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .services-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            animation: fadeInDown 1s ease;
+        }
+
+        .services-hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #3498db, #2ecc71);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: #3498db;
+        }
+
+        .service-card h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .service-features {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #eee;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-list li {
+            margin: 0.5rem 0;
+            color: #666;
+            display: flex;
+            align-items: center;
+        }
+
+        .feature-list li::before {
+            content: '✓';
+            color: #2ecc71;
+            margin-right: 0.5rem;
+        }
+
+        .cta-section {
+            background: #f8f9fa;
+            padding: 4rem 0;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .cta-button:hover {
+            background: #2980b9;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
@@ -107,29 +253,80 @@
     </header>
 
     <main>
-        <section id="services">
+        <section class="services-hero">
             <div class="container">
-                <h2>产品与服务</h2>
-                <div class="service-item">
-                    <h3>搜索引擎优化（SEO）</h3>
-                    <p>我们的SEO服务旨在提高您网站在搜索引擎结果页面的排名，增加有机流量，提高品牌知名度。</p>
+                <h1>创新的数字营销解决方案</h1>
+                <p>我们提供全方位的数字营销服务，助力您的企业在数字时代蓬勃发展</p>
+            </div>
+        </section>
+
+        <section class="services-content">
+            <div class="container">
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">🔍</div>
+                        <h3>搜索引擎优化（SEO）</h3>
+                        <p>提升您的网站在搜索引擎中的排名，获得持续稳定的有机流量。</p>
+                        <div class="service-features">
+                            <ul class="feature-list">
+                                <li>关键词研究与优化</li>
+                                <li>网站技术优化</li>
+                                <li>内容策略规划</li>
+                                <li>排名追踪与分析</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">📱</div>
+                        <h3>社交媒体管理</h3>
+                        <p>在各大社交平台建立强大的品牌形象，提升用户互动与忠诚度。</p>
+                        <div class="service-features">
+                            <ul class="feature-list">
+                                <li>社交账号运营</li>
+                                <li>内容创作与发布</li>
+                                <li>社区互动管理</li>
+                                <li>效果数据分析</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">✍️</div>
+                        <h3>内容营销</h3>
+                        <p>创作高质量内容，吸引目标受众，建立品牌权威性。</p>
+                        <div class="service-features">
+                            <ul class="feature-list">
+                                <li>内容策略制定</li>
+                                <li>专业文案撰写</li>
+                                <li>视频内容制作</li>
+                                <li>效果跟踪优化</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">📊</div>
+                        <h3>付费广告管理</h3>
+                        <p>精准投放付费广告，最大化您的广告投资回报。</p>
+                        <div class="service-features">
+                            <ul class="feature-list">
+                                <li>广告策略规划</li>
+                                <li>精准受众定位</li>
+                                <li>广告创意优化</li>
+                                <li>ROI数据分析</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                <div class="service-item">
-                    <h3>社交媒体管理</h3>
-                    <p>我们帮助您在各大社交平台上建立强大的品牌形象，增加粉丝互动，提高品牌忠诚度。</p>
-                </div>
-                <div class="service-item">
-                    <h3>内容营销</h3>
-                    <p>我们创作引人入胜的内容，吸引目标受众，建立品牌权威，推动转化。</p>
-                </div>
-                <div class="service-item">
-                    <h3>付费广告管理（PPC）</h3>
-                    <p>我们设计和管理高效的付费广告活动，确保您的广告预算得到最佳利用，实现最大投资回报。</p>
-                </div>
-                <div class="service-item">
-                    <h3>数据分析与市场洞察</h3>
-                    <p>我们深入分析您的营销数据，提供actionable洞察，帮助您做出数据驱动的决策。</p>
-                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <h2>准备开始您的数字营销之旅？</h2>
+                <p>联系我们，获取专业的解决方案建议</p>
+                <a href="index.html#contact" class="cta-button">立即咨询</a>
             </div>
         </section>
     </main>
