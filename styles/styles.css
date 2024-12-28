@@ -351,7 +351,7 @@ footer {
     color: white;
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 4px;
-    padding: 5px 20px 5px 10px;  /* 右侧留头空间 */
+    padding: 5px 20px 5px 10px;  /* 右侧留���空间 */
     font-size: 14px;
     cursor: pointer;
     appearance: none;  /* 移除默认的下拉箭头 */
@@ -1008,7 +1008,7 @@ html {
         height: 50px;
     }
 
-    /* 导航菜单容器 */
+    /* 导航��单容器 */
     nav ul {
         display: none; /* 默认隐藏 */
         position: fixed;
@@ -1070,12 +1070,12 @@ html {
 /* 肖像图片容器 */
 .profile-image {
     flex-shrink: 0;
-    width: 280px;
-    height: 280px;
+    width: 140px;  /* 从 280px 减小到 140px */
+    height: 140px; /* 从 280px 减小到 140px */
     border-radius: 50%;
     overflow: hidden;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    border: 5px solid white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border: 3px solid white; /* 边框也相应减小 */
     position: relative;
 }
 
@@ -1124,8 +1124,8 @@ html {
     }
 
     .profile-image {
-        width: 220px;
-        height: 220px;
+        width: 110px;  /* 从 220px 减小到 110px */
+        height: 110px; /* 从 220px 减小到 110px */
         margin: 0 auto;
     }
 
