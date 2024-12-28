@@ -351,7 +351,7 @@ footer {
     color: white;
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 4px;
-    padding: 5px 20px 5px 10px;  /* 右侧留���头空间 */
+    padding: 5px 20px 5px 10px;  /* 右侧留头空间 */
     font-size: 14px;
     cursor: pointer;
     appearance: none;  /* 移除默认的下拉箭头 */
@@ -761,7 +761,7 @@ html {
 }
 
 .site-logo img {
-    height: 40px; /* 默��� logo 高度 */
+    height: 40px; /* 默认 logo 高度 */
     width: auto;
     margin-right: 10px;
 }
@@ -1050,15 +1050,21 @@ html {
 .about-profile {
     padding: 4rem 0;
     background-color: #f8f9fa;
+    margin-top: -3rem; /* 让个人资料部分略微与 hero 重叠 */
+    position: relative;
+    z-index: 1;
 }
 
 .profile-wrapper {
+    background-color: white;
+    padding: 3rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     display: flex;
     align-items: center;
     gap: 3rem;
-    max-width: 900px;
+    max-width: 1000px;
     margin: 0 auto;
-    padding: 0 1rem;
 }
 
 /* 肖像图片容器 */
@@ -1141,5 +1147,29 @@ html {
     .profile-image {
         border: none;
         box-shadow: none;
+    }
+}
+
+/* 公司介绍部分样式 */
+.about-company {
+    padding: 4rem 0;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .about-page .page-hero {
+        padding: 5rem 0 2rem;
+    }
+
+    .about-profile {
+        margin-top: -2rem;
+        padding: 2rem 1rem;
+    }
+
+    .profile-wrapper {
+        padding: 2rem 1rem;
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
     }
 } 
