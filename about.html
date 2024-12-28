@@ -4,81 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>关于我们 - ByteAd</title>
-    <style>
-        /* 复制 index.html 中的所有样式 */
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-        }
-        nav {
-            background-color: #333;
-            color: white;
-            padding: 1rem;
-        }
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        nav ul li {
-            display: inline;
-            margin-right: 1rem;
-        }
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-        }
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-        }
-        /* 添加其他必要的样式... */
-
-        /* 添加页脚相关样式 */
-        footer {
-            background-color: #333;
-            color: white;
-            padding: 2rem 0;
-        }
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-        }
-        .footer-section {
-            flex: 1;
-            margin-right: 2rem;
-        }
-        .footer-section:last-child {
-            margin-right: 0;
-        }
-        .footer-section h3 {
-            margin-bottom: 1rem;
-        }
-        .footer-section ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        .footer-section ul li {
-            margin-bottom: 0.5rem;
-        }
-        .footer-section ul li a {
-            color: white;
-            text-decoration: none;
-        }
-        .social-icons a {
-            color: white;
-            text-decoration: none;
-            margin-right: 1rem;
-        }
-        .footer-bottom {
-            text-align: center;
-            margin-top: 2rem;
-            padding-top: 1rem;
-            border-top: 1px solid #555;
-        }
-    </style>
+    <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
     <header>
@@ -102,30 +28,51 @@
     </header>
 
     <main>
-        <section id="about">
+        <section class="page-hero">
             <div class="container">
-                <h2>关于我们</h2>
-                <p>欢迎来到ByteAd，您的互联网营销战略合作伙伴！</p>
-                <p>在数字化时代，企业面临着前所未有的机遇和挑战。我们致力于帮助各类企业在互联网世界中建立品牌知名度、提高用户参与度，并实现业务增长。我们的团队由一群充满激情的数字营销专家组成，他们在搜索引擎优化（SEO）、社交媒体营销、内容创作、数据分析等领域拥有丰富的经验。</p>
-                <p>我们的使命是通过创新的营销解决方案，帮助客户在竞争激烈的市场中脱颖而出。无论您是初创公司还是知名品牌，我们都将根据您的独特需求，量身定制战略，帮助您实现业务目标。</p>
-                <p>我们相信，每一个品牌都有独特的故事，我们致力于让这个故事在网络世界中熠熠生辉。加入ByteAd，让我们携手共创辉煌！</p>
-                
-                <h3>我们的核心价值观：</h3>
-                <ol>
-                    <li>创新：我们始终保持对行业新趋势的敏锐洞察，为客户提供最前沿的解决方案。</li>
-                    <li>诚信：以客户为中心，确保每一项服务的透明和诚信。</li>
-                    <li>协作：与客户紧密合作，共同制定成功的营销战略。</li>
-                    <li>卓越：我们追求卓越，力求超越客户的期望，助力他们取得更大的成功。</li>
-                </ol>
-                
-                <h3>我们的服务</h3>
-                <ul>
-                    <li>搜索引擎优化（SEO）</li>
-                    <li>社交媒体管理</li>
-                    <li>内容营销</li>
-                    <li>付费广告管理（PPC）</li>
-                    <li>数据分析与市场洞察</li>
-                </ul>
+                <h1>关于我们</h1>
+                <p>您的互联网营销战略合作伙伴</p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="container">
+                <div class="content-grid">
+                    <div class="content-card">
+                        <h3>我们的故事</h3>
+                        <p>欢迎来到ByteAd！在数字化时代，企业面临着前所未有的机遇和挑战。我们致力于帮助各类企业在互联网世界中建立品牌知名度、提高用户参与度，并实现业务增长。</p>
+                    </div>
+
+                    <div class="content-card">
+                        <h3>我们的团队</h3>
+                        <p>我们的团队由一群充满激情的数字营销专家组成，他们在搜索引擎优化（SEO）、社交媒体营销、内容创作、数据分析等领域拥有丰富的经验。</p>
+                    </div>
+
+                    <div class="content-card">
+                        <h3>我们的使命</h3>
+                        <p>通过创新的营销解决方案，帮助客户在竞争激烈的市场中脱颖而出。无论您是初创公司还是知名品牌，我们都将根据您的独特需求，量身定制战略。</p>
+                    </div>
+                </div>
+
+                <div class="content-grid">
+                    <div class="content-card">
+                        <h3>核心价值观</h3>
+                        <ul class="feature-list">
+                            <li>创新：保持对行业新趋势的敏锐洞察</li>
+                            <li>诚信：以客户为中心，确保服务透明</li>
+                            <li>协作：与客户紧密合作，共同制定战略</li>
+                            <li>卓越：追求卓越，超越客户期望</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <h2>准备开始您的数字营销之旅？</h2>
+                <p>让我们一起打造您的品牌故事</p>
+                <a href="index.html#contact" class="cta-button">联系我们</a>
             </div>
         </section>
     </main>
