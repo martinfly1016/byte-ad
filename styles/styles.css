@@ -698,4 +698,74 @@ html {
     .page-hero {
         padding-top: calc(2rem + 50px); /* 50px 是移动端导航栏高度 */
     }
+}
+
+/* Logo 样式 */
+.site-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+}
+
+.site-logo img {
+    height: 40px; /* 默认 logo 高度 */
+    width: auto;
+    margin-right: 10px;
+}
+
+/* 移动端 Logo 调整 */
+@media (max-width: 768px) {
+    .site-logo img {
+        height: 32px; /* 移动端稍微缩小 logo */
+    }
+    
+    .site-logo h1 {
+        font-size: 1.2rem;
+    }
+}
+
+/* 页脚 Logo 样式 */
+.footer-logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.footer-logo img {
+    height: 30px;
+    width: auto;
+    margin-right: 10px;
+}
+
+/* Logo 容器响应式调整 */
+@media (max-width: 480px) {
+    .site-logo {
+        flex-shrink: 0; /* 防止 logo 被压缩 */
+    }
+
+    .site-logo img {
+        height: 28px; /* 更小屏幕上进一步缩小 */
+    }
+}
+
+/* 确保 logo 图片质量 */
+.site-logo img,
+.footer-logo img {
+    object-fit: contain; /* 保持图片比例 */
+    max-width: 100%; /* 确保不会溢出容器 */
+}
+
+/* 添加 logo 悬停效果 */
+.site-logo:hover {
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+}
+
+/* 打印样式 */
+@media print {
+    .site-logo img,
+    .footer-logo img {
+        -webkit-print-color-adjust: exact; /* 确保打印时 logo 正确显示 */
+    }
 } 
