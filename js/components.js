@@ -62,12 +62,12 @@ const COMPONENTS = {
     `,
 
     // CTA 区域组件
-    ctaSection: (title, subtitle, buttonText = '立即咨询', buttonUrl = 'index.html#contact') => `
+    ctaSection: (title, subtitle, buttonText = '立即咨询') => `
         <section class="cta-section">
             <div class="container">
                 <h2>${title}</h2>
                 <p>${subtitle}</p>
-                <a href="${buttonUrl}" class="cta-button">${buttonText}</a>
+                <a href="mailto:${CONFIG.contact.email}" class="cta-button">${buttonText}</a>
             </div>
         </section>
     `
