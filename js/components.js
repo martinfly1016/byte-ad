@@ -11,11 +11,9 @@ const COMPONENTS = {
                     ☰
                 </button>
                 <ul>
-                    <li><a href="index.html" class="home" data-i18n="nav.home">首页</a></li>
-                    <li><a href="about.html" class="about" data-i18n="nav.about">关于我们</a></li>
-                    <li><a href="services.html" class="services" data-i18n="nav.services">产品与服务</a></li>
-                    <li><a href="#cases" class="cases" data-i18n="nav.cases">成功案例</a></li>
-                    <li><a href="#contact" class="contact" data-i18n="nav.contact">联系我们</a></li>
+                    ${config.navigation.map(item => `
+                        <li><a href="${item.url}" class="${item.class}" data-i18n="nav.${item.class}">${item.text}</a></li>
+                    `).join('')}
                 </ul>
                 <select id="language-selector">
                     <option value="zh">中文</option>
@@ -37,11 +35,9 @@ const COMPONENTS = {
                     </div>
                     <h3 class="sitemap">网站地图</h3>
                     <ul>
-                        <li><a href="index.html" class="home" data-i18n="nav.home">首页</a></li>
-                        <li><a href="about.html" class="about" data-i18n="nav.about">关于我们</a></li>
-                        <li><a href="services.html" class="services" data-i18n="nav.services">产品与服务</a></li>
-                        <li><a href="#cases" class="cases" data-i18n="nav.cases">成功案例</a></li>
-                        <li><a href="#contact" class="contact" data-i18n="nav.contact">联系我们</a></li>
+                        ${config.navigation.map(item => `
+                            <li><a href="${item.url}" class="${item.class}" data-i18n="nav.${item.class}">${item.text}</a></li>
+                        `).join('')}
                     </ul>
                 </div>
                 <div class="footer-section">

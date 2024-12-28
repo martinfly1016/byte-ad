@@ -25,7 +25,7 @@ const CONFIG = {
         { text: '首页', url: 'index.html', class: 'home' },
         { text: '关于我们', url: 'about.html', class: 'about' },
         { text: '产品与服务', url: 'services.html', class: 'services' },
-        { text: '成功案例', url: 'index.html#cases', class: 'cases' },
+        { text: '成功案例', url: 'cases.html', class: 'cases' },
         { text: '联系我们', url: 'index.html#contact', class: 'contact' }
     ],
 
