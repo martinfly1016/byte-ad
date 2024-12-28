@@ -130,25 +130,131 @@ footer {
 
 /* 英雄区域样式 */
 .page-hero {
-    background: linear-gradient(135deg, #2c3e50, #3498db);
+    position: relative;
     color: white;
     padding: 8rem 0 4rem;
     text-align: center;
     margin-bottom: 3rem;
+    background-size: 400%;
+    animation: gradientBG 15s ease infinite;
+    background-image: linear-gradient(
+        45deg,
+        #2c3e50,  /* 深蓝色 */
+        #3498db,  /* 蓝色 */
+        #2ecc71,  /* 绿色 */
+        #e74c3c,  /* 红色 */
+        #f1c40f,  /* 黄色 */
+        #9b59b6,  /* 紫色 */
+        #1abc9c,  /* 青色 */
+        #e67e22,  /* 橙色 */
+        #2c3e50   /* 回到起始颜色，形成循环 */
+    );
 }
 
+/* 添加渐变动画 */
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* 添加文字动画效果 */
 .page-hero h1 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
-    animation: fadeInDown 1s ease;
+    animation: fadeInDown 1s ease, glowText 2s ease-in-out infinite;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
 .page-hero p {
     font-size: 1.2rem;
-    max-width: 800px;
-    margin: 0 auto;
-    opacity: 0.9;
-    animation: fadeInUp 1s ease;
+    animation: fadeInUp 1s ease 0.5s both, glowText 2s ease-in-out infinite 1s;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
+/* 添加文字发光动画 */
+@keyframes glowText {
+    0% {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+    50% {
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.8),
+                     0 0 30px rgba(255, 255, 255, 0.6);
+    }
+    100% {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+}
+
+/* 添加悬浮效果 */
+.page-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.2);
+    pointer-events: none;
+}
+
+/* 确保内容在渐变层之上 */
+.page-hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* 添加交互效果 */
+.page-hero:hover {
+    animation-play-state: paused;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .page-hero {
+        padding: 6rem 0 3rem;
+    }
+    
+    .page-hero h1 {
+        font-size: 2rem;
+    }
+    
+    .page-hero p {
+        font-size: 1rem;
+    }
+}
+
+/* 可选：添加粒子效果 */
+.page-hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: radial-gradient(circle at center, white 0%, transparent 0.1%);
+    background-size: 3px 3px;
+    opacity: 0.1;
+    animation: sparkle 4s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes sparkle {
+    0% {
+        opacity: 0.1;
+    }
+    50% {
+        opacity: 0.2;
+    }
+    100% {
+        opacity: 0.1;
+    }
 }
 
 /* 内容卡片样式 */
