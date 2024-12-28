@@ -8,9 +8,9 @@ const CONFIG = {
 
     // 联系方式
     contact: {
-        email: 'yuchao@bytead.com',
+        email: 'yuchao@byte-ad.com',
         phone: '+81090-67022476',
-        address: '日本东京都墨田区吾妻桥2-16-5 1楼'
+        address: '日本东京都墨田区吾妻桥2-16-5 1F'
     },
 
     // 社交媒体链接
