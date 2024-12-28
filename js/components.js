@@ -5,14 +5,16 @@ const COMPONENTS = {
             <div class="container">
                 <h1>${config.site.name}</h1>
                 <ul>
-                    ${config.navigation.map(item => `
-                        <li><a href="${item.url}" class="${item.class}">${item.text}</a></li>
-                    `).join('')}
+                    <li><a href="index.html" data-i18n="nav.home">首页</a></li>
+                    <li><a href="about.html" data-i18n="nav.about">关于我们</a></li>
+                    <li><a href="services.html" data-i18n="nav.services">产品与服务</a></li>
+                    <li><a href="#cases" data-i18n="nav.cases">成功案例</a></li>
+                    <li><a href="#contact" data-i18n="nav.contact">联系我们</a></li>
                 </ul>
                 <select id="language-selector">
-                    ${config.languages.map(lang => `
-                        <option value="${lang.code}">${lang.text}</option>
-                    `).join('')}
+                    <option value="zh">中文</option>
+                    <option value="en">English</option>
+                    <option value="ja">日本語</option>
                 </select>
             </div>
         </nav>
