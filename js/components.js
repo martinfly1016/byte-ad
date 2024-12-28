@@ -3,7 +3,10 @@ const COMPONENTS = {
     header: (config) => `
         <nav>
             <div class="container">
-                <h1>${config.site.name}</h1>
+                <a href="index.html" class="site-logo">
+                    <img src="images/logo.png" alt="ByteAd Logo">
+                    <h1>${config.site.name}</h1>
+                </a>
                 <button class="menu-toggle" aria-label="Toggle menu">
                     ☰
                 </button>
@@ -28,11 +31,17 @@ const COMPONENTS = {
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="images/logo.png" alt="ByteAd Logo">
+                        <span>${config.site.name}</span>
+                    </div>
                     <h3 class="sitemap">网站地图</h3>
                     <ul>
-                        ${config.navigation.map(item => `
-                            <li><a href="${item.url}" class="${item.class}">${item.text}</a></li>
-                        `).join('')}
+                        <li><a href="index.html" class="home" data-i18n="nav.home">首页</a></li>
+                        <li><a href="about.html" class="about" data-i18n="nav.about">关于我们</a></li>
+                        <li><a href="services.html" class="services" data-i18n="nav.services">产品与服务</a></li>
+                        <li><a href="#cases" class="cases" data-i18n="nav.cases">成功案例</a></li>
+                        <li><a href="#contact" class="contact" data-i18n="nav.contact">联系我们</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
