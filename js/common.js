@@ -88,16 +88,20 @@ document.addEventListener('DOMContentLoaded', initializeComponents);
 function initMobileMenu() {
     const menuToggle = document.querySelector('.menu-toggle');
     const navMenu = document.querySelector('nav ul');
+    const body = document.body;
     
     if (menuToggle && navMenu) {
-        menuToggle.addEventListener('click', () => {
+        menuToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
             navMenu.classList.toggle('active');
+            body.classList.toggle('menu-open');
         });
 
-        // 点击菜单项后关闭菜单
+        // 点击菜单项关闭菜单
         navMenu.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 navMenu.classList.remove('active');
+                body.classList.remove('menu-open');
             });
         });
 
@@ -105,7 +109,21 @@ function initMobileMenu() {
         document.addEventListener('click', (e) => {
             if (!e.target.closest('nav')) {
                 navMenu.classList.remove('active');
+                body.classList.remove('menu-open');
+            }
+        });
+
+        // 监听窗口大小变化
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                navMenu.classList.remove('active');
+                body.classList.remove('menu-open');
             }
         });
     }
-} 
+}
+
+// 在页面加载完成后初始化
+document.addEventListener('DOMContentLoaded', () => {
+    initMobileMenu();
+}); 
