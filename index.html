@@ -1,79 +1,288 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ByteAd - 数字营销专家</title>
-    <link rel="stylesheet" href="styles/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ByteAd - デジタルマーケティングで未来を創る</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Helvetica Neue', sans-serif;
+      color: #111;
+      background-color: #fff;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: #f7f7f7;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      white-space: nowrap;
+    }
+    .logo img {
+      height: 32px;
+    }
+    nav {
+      flex-grow: 1;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      padding: 0;
+      margin: 0;
+      white-space: nowrap;
+      overflow-x: auto;
+    }
+    nav li {
+      flex-shrink: 0;
+      white-space: nowrap;
+      display: inline-block;
+    }
+    nav a {
+      text-decoration: none;
+      color: #111;
+    }
+    .hero {
+      text-align: center;
+      padding: 5rem 2rem;
+      background-image: url('https://byte-ad.com/images/bg1.webp');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: relative;
+      z-index: 1;
+      opacity: 0;
+      transform: translateX(50px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.4);
+      z-index: -1;
+    }
+    .hero.animate {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      letter-spacing: 1px;
+    }
+    .cta-button {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.75rem 2rem;
+      background: linear-gradient(90deg, #00c9ff 0%, #92fe9d 100%);
+      color: #111;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: bold;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .cta-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+    }
+    .section {
+      padding: 3rem 2rem;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .section.animate {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+    .card {
+      flex: 1 1 calc(33.333% - 1rem);
+      background: linear-gradient(to bottom right, #ffffff, #f4f4f4);
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #f7f7f7;
+    }
+    @media (max-width: 768px) {
+      .grid {
+        flex-direction: column;
+      }
+      .card {
+      flex: 1 1 calc(33.333% - 1rem);
+      background: linear-gradient(to bottom right, #ffffff, #f4f4f4);
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    }
+      nav ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        max-width: 100%;
+      }
+      nav li {
+        flex: 0 0 50%;
+        text-align: center;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header></header>
+  <header>
+    <div class="logo">
+      <img src="http://byte-ad.com/images/logo.png" alt="ByteAd Logo">
+      ByteAd
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#services">サービス</a></li>
+        <li><a href="#about">会社概要</a></li>
+        <li><a href="#cases">実績</a></li>
+        <li><a href="#contact">お問い合わせ</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <main>
-        <section class="page-hero">
-            <div class="container">
-                <h1 data-i18n="home.hero.title">引领数字营销新时代</h1>
-                <p data-i18n="home.hero.subtitle">专业的数字营销解决方案，助力企业实现业务增长</p>
-            </div>
-        </section>
+  <section class="hero">
+    <h1 id="hero-title">デジタルマーケティングで、未来を創る</h1>
+    <p id="hero-desc">革新的な戦略で、ブランドを次のステージへ</p>
+    <a href="#contact" class="cta-button" id="hero-cta">お問い合わせ</a>
+  </section>
 
-        <section class="content-section">
-            <div class="container">
-                <div class="content-grid">
-                    <div class="content-card">
-                        <h3>数字营销策略</h3>
-                        <p>量身定制的营销策略，帮助您在数字时代脱颖而出。</p>
-                        <ul class="feature-list">
-                            <li>市场分析</li>
-                            <li>竞争对手研究</li>
-                            <li>目标受众定位</li>
-                            <li>策略执行计划</li>
-                        </ul>
-                    </div>
+  <section id="services" class="section">
+    <h2 id="services-title">サービス</h2>
+    <div class="grid">
+      <div class="card" style="background-image: url('https://byte-ad.com/images/pattern1.svg'); background-repeat: no-repeat; background-position: center; background-size: contain;">
+        <h3>人工智能（AI）導入と応用</h3>
+        <p>企業のマーケティングファネルの各段階に最先端AIを導入。</p>
+      </div>
+      <div class="card" style="background-image: url('https://byte-ad.com/images/pattern2.svg'); background-repeat: no-repeat; background-position: center; background-size: contain;">
+        <h3>ブランド構築</h3>
+        <p>一貫性あるブランドストーリーとビジュアルを設計。</p>
+      </div>
+      <div class="card" style="background-image: url('https://byte-ad.com/images/pattern3.svg'); background-repeat: no-repeat; background-position: center; background-size: contain;">
+        <h3>全域マーケティング方案部署</h3>
+        <p>製品がすべてのプラットフォームとシーンをカバーするようにします。</p>
+      </div>
+      <div class="card" style="background-image: url('https://byte-ad.com/images/pattern4.svg'); background-repeat: no-repeat; background-position: center; background-size: contain;">
+        <h3>WEBサイト / LP制作</h3>
+        <p>戦略に基づいた構成・設計から実装、運用まで。</p>
+      </div>
+      <div class="card" style="background-image: url('https://byte-ad.com/images/pattern5.svg'); background-repeat: no-repeat; background-position: center; background-size: contain;">
+        <h3>動画 / モーショングラフィックス</h3>
+        <p>映像を通じてブランドの世界観を伝えるクリエイティブ。</p>
+      </div>
+      <div class="card" style="background-image: url('https://byte-ad.com/images/pattern6.svg'); background-repeat: no-repeat; background-position: center; background-size: contain;">
+        <h3>ブランドガイドライン</h3>
+        <p>中長期的なブランド成長のためのルールと設計書。</p>
+      </div>
+    </div>
+  </section>
 
-                    <div class="content-card">
-                        <h3>品牌建设</h3>
-                        <p>打造独特的品牌形象，建立持久的品牌价值。</p>
-                        <ul class="feature-list">
-                            <li>品牌定位</li>
-                            <li>视觉识别系统</li>
-                            <li>品牌故事策划</li>
-                            <li>品牌传播执行</li>
-                        </ul>
-                    </div>
+  <section id="about" class="section" style="background-color: #000; color: #fff;">
+    <h2 id="about-title">会社概要</h2>
+    <div class="about-ceo" style="display: flex; flex-wrap: wrap; align-items: center; gap: 2rem; flex-direction: column; text-align: center;">
+      <div class="ceo-photo" style="flex-shrink: 0;">
+        <img src="https://byte-ad.com/images/IMG_0980.jpg" alt="CEO写真" style="width: 180px; height: 180px; object-fit: cover; border-radius: 50%;">
+      </div>
+      <div class="ceo-message" style="flex: 1; max-width: 600px;">
+        <h3>取締役 CEO</h3>
+        <p id="about-desc">
+          超過15年以上の業界経験を持ち、インターネットマーケティングに対して非常に深い理解を有し、独自で効果的な実践手法を築き上げてきました。<br>
+          ByteAdは、デジタルマーケティングの未来を切り拓くために設立されました。<br>
+          私たちは、革新的な戦略と最先端の技術を駆使し、クライアントのブランド価値を最大化することを使命としています。<br>
+          常に変化する市場環境に対応し、柔軟かつ迅速なソリューションを提供することで、持続可能な成長を実現します。<br>
+          私たちと共に、新たな可能性を追求していきましょう。
+        </p>
+      </div>
+    </div>
+  </section>
 
-                    <div class="content-card">
-                        <h3>数据分析</h3>
-                        <p>深入的数据分析，助您做出明智的营销决策。</p>
-                        <ul class="feature-list">
-                            <li>用户行为分析</li>
-                            <li>转化率优化</li>
-                            <li>ROI跟踪</li>
-                            <li>数据报告</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
+  <section id="cases" class="section">
+    <h2 id="cases-title">実績</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="https://byte-ad.com/images/seo.png" alt="全球科技ブランドSEO优化" style="width: 100%; border-radius: 4px;">
+        <h3>全球科技ブランドSEO最適化</h3>
+        <p>キーワード調査とWebサイト最適化により、6ヶ月で自然検索トラフィックを156%増加、主要キーワード上位3位ランク数も200%増加。</p>
+      </div>
+      <div class="card">
+        <img src="https://byte-ad.com/images/brand.png" alt="时尚ブランドのSNSマーケティング" style="width: 100%; border-radius: 4px;">
+        <h3>ファッションブランドのSNSマーケティング</h3>
+        <p>SNSキャンペーンを企画・運用し、3ヶ月でフォロワー数300%増加、ブランド話題の閲覧数が2000万回を突破。</p>
+      </div>
+    </div>
+  </section>
 
-        <section class="cta-section">
-            <div class="container">
-                <h2>准备开启您的数字营销之旅？</h2>
-                <p>联系我们，获取专业的解决方案建议</p>
-                <a href="mailto:yuchao@byte-ad.com" class="cta-button">立即咨询</a>
-            </div>
-        </section>
-    </main>
+  <section id="contact" class="section" style="background-color: #4a4a4a !important; color: #fff;">
+    <h2 id="contact-title">お問い合わせ</h2>
+    <div class="contact-info" style="text-align: center; padding: 2rem 1rem;">
+      <p>名称：バイドアド株式会社</p>
+      <p>設立：2024年6月</p>
+      <p>本社：日本東東京都墨田区吾妻橋2-16-5 1F</p>
+      <p>代表：喩 超</p>
+      <p>メール: <a href="mailto:yuchao@byte-ad.com" style="color: #a8e6cf;">yuchao@byte-ad.com</a></p>
+    </div>
+  </section>
 
-    <footer></footer>
+  <footer class="section">
+    <p>&copy; 2025 ByteAd. All rights reserved.</p>
+  </footer>
 
-    <!-- 引入语言文件 -->
-    <script src="locales/zh.js"></script>
-    <script src="locales/en.js"></script>
-    <script src="locales/ja.js"></script>
-    <!-- 其他脚本 -->
-    <script src="js/config.js"></script>
-    <script src="js/components.js"></script>
-    <script src="js/common.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate');
+          } else {
+            entry.target.classList.remove('animate');
+          }
+        });
+      }, {
+        threshold: 0.1
+      });
+
+      document.querySelectorAll('.hero, .section').forEach(el => {
+        observer.observe(el);
+      });
+    });
+  </script>
 </body>
 </html>
