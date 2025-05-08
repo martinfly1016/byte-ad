@@ -739,8 +739,36 @@
 /* 仅在移动端显示箭头 */
 @media (max-width: 768px) {
   .scroll-indicator {
+  position: absolute;
+  bottom: 5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  color: white;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  animation: floatDown 2s infinite ease-in-out;
+  pointer-events: none;
+  z-index: 10;
+}
+
+@media (max-width: 768px) {
+  .scroll-indicator {
     display: block;
   }
+}
+
+@keyframes floatDown {
+  0% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(8px);
+  }
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+}
 }
   </style>
 </head>
@@ -768,9 +796,7 @@
     <h1 id="hero-title">デジタルマーケティングで、未来を創る</h1>
     <p id="hero-desc">革新的な戦略で、ブランドを次のステージへ</p>
     <a href="#contact" class="cta-button" id="hero-cta">Contact</a>
-    <div class="scroll-indicator">
-      ↓
-    </div>
+    <div class="scroll-indicator">↓</div>
   </section>
 
   <section id="services" class="section" style="margin-top: 10px;">
@@ -991,6 +1017,28 @@
         });
       });
     });
+
+    document.addEventListener("DOMContentLoaded", function () {
+  const hero = document.querySelector('.hero');
+  const indicator = document.querySelector('.scroll-indicator');
+
+  function updateArrowVisibility() {
+    const heroHeight = hero.offsetHeight;
+    const viewportHeight = window.innerHeight;
+
+    if (heroHeight >= viewportHeight * 0.9) {
+      indicator.style.opacity = '1';
+    } else {
+      indicator.style.opacity = '0';
+    }
+  }
+
+  // 初始检测
+  updateArrowVisibility();
+
+  // 监听窗口变化
+  window.addEventListener('resize', updateArrowVisibility);
+});
   </script>
 </body>
 </html>
