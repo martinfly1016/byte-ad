@@ -160,6 +160,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      overflow: hidden;
     }
     .hero::before {
       content: '';
@@ -174,8 +175,7 @@
         rgba(0, 0, 0, 0.6)
       );
       background-size: 200% 200%;
-      animation: heroGradient1 15s ease forwards;
-      animation-play-state: paused;
+      animation: none;
       z-index: -1;
     }
     .hero::after {
@@ -191,13 +191,15 @@
         #fff 100%
       );
       background-size: 200% 200%;
-      animation: heroGradient2 10s ease forwards;
-      animation-play-state: paused;
+      animation: none;
       z-index: -1;
     }
-    .hero.animate {
-      opacity: 1;
-      transform: translateX(0);
+    .hero.animate-gradient::before {
+      animation: heroGradient1 15s ease forwards;
+    }
+    
+    .hero.animate-gradient::after {
+      animation: heroGradient2 10s ease forwards;
     }
     .hero h1 {
       font-size: 2.5rem;
@@ -528,40 +530,22 @@
         padding: 4rem 1rem;
         min-height: 70vh;
         margin-bottom: -50px;
-        position: relative;
-        overflow: hidden;
       }
       .hero::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
         background: linear-gradient(45deg, 
           rgba(0, 0, 0, 0.6),
           rgba(0, 0, 0, 0.3),
           rgba(0, 0, 0, 0.6)
         );
         background-size: 200% 200%;
-        animation: heroGradient1 15s ease infinite;
-        z-index: -1;
       }
       .hero::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
         background: linear-gradient(to bottom, 
           transparent 0%,
           rgba(255, 255, 255, 0.1) 70%,
           #fff 100%
         );
         background-size: 200% 200%;
-        animation: heroGradient2 10s ease infinite;
-        z-index: -1;
       }
       #hero-title {
         font-size: 2rem;
