@@ -78,7 +78,7 @@
     .logo-brand {
       font-size: 1.4rem;
       font-weight: 700;
-      background: linear-gradient(90deg, #2563eb, #3b82f6);
+      background: linear-gradient(90deg, #1a1a1a, #4a4a4a);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       letter-spacing: 0.5px;
@@ -126,11 +126,11 @@
       height: 2px;
       bottom: 0;
       left: 0;
-      background-color: #2563eb;
+      background-color: #1a1a1a;
       transition: width 0.3s ease;
     }
     nav a:hover {
-      color: #2563eb;
+      color: #1a1a1a;
     }
     nav a:hover::after {
       width: 100%;
@@ -186,17 +186,18 @@
       display: inline-block;
       margin-top: 1rem;
       padding: 0.75rem 2rem;
-      background: linear-gradient(90deg, #2563eb, #3b82f6);
+      background: linear-gradient(90deg, #1a1a1a, #333333);
       color: #ffffff;
       text-decoration: none;
       border-radius: 30px;
       font-weight: bold;
-      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     .cta-button:hover {
       transform: translateY(-3px);
-      box-shadow: 0 6px 16px rgba(37, 99, 235, 0.3);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+      background: linear-gradient(90deg, #000000, #1a1a1a);
     }
     .section {
       padding: 3rem 2rem;
@@ -212,7 +213,7 @@
       display: inline-block;
       left: 50%;
       transform: translateX(-50%);
-      background: linear-gradient(90deg, #1e40af, #3b82f6);
+      background: linear-gradient(90deg, #1a1a1a, #4a4a4a);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       padding: 0 1rem;
@@ -223,7 +224,7 @@
       width: 50px;
       height: 50px;
       border-radius: 50%;
-      background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(59, 130, 246, 0.1));
+      background: linear-gradient(135deg, rgba(26, 26, 26, 0.1), rgba(74, 74, 74, 0.1));
       left: -20px;
       top: -15px;
       z-index: -1;
@@ -236,7 +237,7 @@
       transform: translateX(-50%);
       width: 100px;
       height: 3px;
-      background: linear-gradient(90deg, #2563eb, #3b82f6);
+      background: linear-gradient(90deg, #1a1a1a, #4a4a4a);
       border-radius: 2px;
     }
     .section.animate {
@@ -255,7 +256,7 @@
       position: absolute;
       width: 200px;
       height: 200px;
-      background: linear-gradient(135deg, rgba(37, 99, 235, 0.05), rgba(59, 130, 246, 0.05));
+      background: linear-gradient(135deg, rgba(26, 26, 26, 0.05), rgba(74, 74, 74, 0.05));
       border-radius: 50%;
       top: -50px;
       left: -50px;
@@ -265,11 +266,11 @@
       background: #ffffff;
       padding: 2rem;
       border-radius: 16px;
-      box-shadow: 0 4px 20px rgba(37, 99, 235, 0.08);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
       transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       position: relative;
       overflow: hidden;
-      border: 1px solid rgba(37, 99, 235, 0.1);
+      border: 1px solid rgba(0, 0, 0, 0.1);
       backdrop-filter: blur(10px);
     }
     .card::before {
@@ -279,7 +280,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(45deg, rgba(37, 99, 235, 0.05), rgba(59, 130, 246, 0.05));
+      background: linear-gradient(45deg, rgba(26, 26, 26, 0.05), rgba(74, 74, 74, 0.05));
       opacity: 0;
       transition: opacity 0.4s ease;
     }
@@ -290,14 +291,14 @@
       height: 3px;
       bottom: 0;
       left: 0;
-      background: linear-gradient(90deg, #2563eb, #3b82f6);
+      background: linear-gradient(90deg, #1a1a1a, #4a4a4a);
       transform: scaleX(0);
       transform-origin: left;
       transition: transform 0.4s ease;
     }
     .card:hover {
       transform: translateY(-10px);
-      box-shadow: 0 20px 40px rgba(37, 99, 235, 0.15);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
     }
     .card:hover::before {
       opacity: 1;
@@ -310,7 +311,7 @@
       margin-bottom: 1rem;
       position: relative;
       padding-bottom: 0.5rem;
-      background: linear-gradient(90deg, #1e40af, #3b82f6);
+      background: linear-gradient(90deg, #1a1a1a, #4a4a4a);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
@@ -323,7 +324,7 @@
     .card-icon {
       font-size: 2rem;
       margin-bottom: 1rem;
-      background: linear-gradient(135deg, #2563eb, #3b82f6);
+      background: linear-gradient(135deg, #1a1a1a, #4a4a4a);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       display: block;
@@ -459,7 +460,7 @@
       }
       .card:hover {
         transform: translateY(-5px);
-        box-shadow: 0 10px 20px rgba(37, 99, 235, 0.12);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
       }
     }
   </style>
