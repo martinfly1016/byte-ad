@@ -212,13 +212,29 @@
       display: inline-block;
       left: 50%;
       transform: translateX(-50%);
+      background: linear-gradient(90deg, #00c9ff, #92fe9d);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      padding: 0 1rem;
+    }
+    .section h2::before {
+      content: '';
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(0, 201, 255, 0.1), rgba(146, 254, 157, 0.1));
+      left: -20px;
+      top: -15px;
+      z-index: -1;
     }
     .section h2::after {
       content: '';
       position: absolute;
       bottom: -10px;
-      left: 0;
-      width: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
       height: 3px;
       background: linear-gradient(90deg, #00c9ff, #92fe9d);
       border-radius: 2px;
@@ -228,19 +244,33 @@
       transform: translateY(0);
     }
     .grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      padding: 1rem;
+      position: relative;
+    }
+    .grid::before {
+      content: '';
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      background: linear-gradient(135deg, rgba(0, 201, 255, 0.05), rgba(146, 254, 157, 0.05));
+      border-radius: 50%;
+      top: -50px;
+      left: -50px;
+      z-index: -1;
     }
     .card {
-      flex: 1 1 calc(33.333% - 1rem);
-      background: linear-gradient(145deg, #ffffff, #f4f4f4);
+      background: #ffffff;
       padding: 2rem;
       border-radius: 16px;
-      box-shadow: 8px 8px 16px #e6e6e6, -8px -8px 16px #ffffff;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       position: relative;
       overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
     }
     .card::before {
       content: '';
@@ -251,25 +281,64 @@
       height: 100%;
       background: linear-gradient(45deg, rgba(0, 201, 255, 0.1), rgba(146, 254, 157, 0.1));
       opacity: 0;
-      transition: opacity 0.3s ease;
+      transition: opacity 0.4s ease;
+    }
+    .card::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 3px;
+      bottom: 0;
+      left: 0;
+      background: linear-gradient(90deg, #00c9ff, #92fe9d);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
     }
     .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 12px 12px 20px #e6e6e6, -12px -12px 20px #ffffff;
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
     }
     .card:hover::before {
       opacity: 1;
+    }
+    .card:hover::after {
+      transform: scaleX(1);
     }
     .card h3 {
       font-size: 1.4rem;
       margin-bottom: 1rem;
       color: #333;
       position: relative;
+      padding-bottom: 0.5rem;
+      background: linear-gradient(90deg, #333, #666);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
     .card p {
       color: #666;
       line-height: 1.6;
       position: relative;
+      font-size: 0.95rem;
+    }
+    .card-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, #00c9ff, #92fe9d);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: block;
+    }
+    @keyframes float {
+      0% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+      100% {
+        transform: translateY(0px);
+      }
     }
     footer {
       text-align: center;
@@ -300,11 +369,8 @@
         overflow: hidden;
       }
       .grid {
-        flex-direction: column;
-        margin: 0;
-        padding: 0 1rem;
-        width: 100%;
-        gap: 1rem;
+        grid-template-columns: 1fr;
+        padding: 0.5rem;
       }
       header {
         padding: 0.5rem;
@@ -385,6 +451,16 @@
         max-width: 100%;
         height: auto;
       }
+      .section h2 {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+      }
+      .card {
+        padding: 1.5rem;
+      }
+      .card:hover {
+        transform: translateY(-5px);
+      }
     }
   </style>
 </head>
@@ -417,29 +493,35 @@
   <section id="services" class="section">
     <h2 id="services-title">サービス</h2>
     <div class="grid">
-      <div class="card" style="background-image: url('https://byte-ad.com/images/pattern1.svg'); background-repeat: no-repeat; background-position: center; background-size: contain;">
+      <div class="card">
+        <span class="card-icon">🤖</span>
         <h3>人工智能（AI）導入と応用</h3>
-        <p>企業のマーケティングファネルの各段階に最先端AIを導入。</p>
+        <p>企業のマーケティングファネルの各段階に最先端AIを導入。効率的なデータ分析と自動化を実現し、ビジネスの成長を加速させます。</p>
       </div>
-      <div class="card" style="background-image: url('https://byte-ad.com/images/pattern2.svg'); background-repeat: no-repeat; background-position: center; background-size: contain;">
+      <div class="card">
+        <span class="card-icon">🎯</span>
         <h3>ブランド構築</h3>
-        <p>一貫性あるブランドストーリーとビジュアルを設計。</p>
+        <p>一貫性あるブランドストーリーとビジュアルを設計。独自の価値提案と市場での差別化を実現し、強力なブランドイメージを確立します。</p>
       </div>
-      <div class="card" style="background-image: url('https://byte-ad.com/images/pattern3.svg'); background-repeat: no-repeat; background-position: center; background-size: contain;">
-        <h3>全域マーケティング方案部署</h3>
-        <p>製品がすべてのプラットフォームとシーンをカバーするようにします。</p>
+      <div class="card">
+        <span class="card-icon">🌐</span>
+        <h3>全域マーケティング方案</h3>
+        <p>製品がすべてのプラットフォームとシーンをカバー。統合されたマーケティング戦略で、より広いターゲット層にリーチします。</p>
       </div>
-      <div class="card" style="background-image: url('https://byte-ad.com/images/pattern4.svg'); background-repeat: no-repeat; background-position: center; background-size: contain;">
+      <div class="card">
+        <span class="card-icon">💻</span>
         <h3>WEBサイト / LP制作</h3>
-        <p>戦略に基づいた構成・設計から実装、運用まで。</p>
+        <p>戦略に基づいた構成・設計から実装、運用まで。最新のテクノロジーと洗練されたデザインで、魅力的なウェブ体験を創出します。</p>
       </div>
-      <div class="card" style="background-image: url('https://byte-ad.com/images/pattern5.svg'); background-repeat: no-repeat; background-position: center; background-size: contain;">
+      <div class="card">
+        <span class="card-icon">🎥</span>
         <h3>動画 / モーショングラフィックス</h3>
-        <p>映像を通じてブランドの世界観を伝えるクリエイティブ。</p>
+        <p>映像を通じてブランドの世界観を伝えるクリエイティブ。感動的なストーリーテリングで、より深い顧客とのつながりを築きます。</p>
       </div>
-      <div class="card" style="background-image: url('https://byte-ad.com/images/pattern6.svg'); background-repeat: no-repeat; background-position: center; background-size: contain;">
+      <div class="card">
+        <span class="card-icon">📋</span>
         <h3>ブランドガイドライン</h3>
-        <p>中長期的なブランド成長のためのルールと設計書。</p>
+        <p>中長期的なブランド成長のためのルールと設計書。一貫性のあるブランド体験を通じて、持続可能な成長を実現します。</p>
       </div>
     </div>
   </section>
