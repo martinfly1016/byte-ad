@@ -289,7 +289,6 @@
       backdrop-filter: blur(10px);
       animation: floatCard 6s ease-in-out infinite;
       background-size: 200% 200%;
-      animation: gradientShift 15s ease infinite;
     }
     .card::before {
       content: '';
@@ -360,7 +359,7 @@
         transform: translateY(0);
       }
     }
-    @keyframes gradientShift {
+    @keyframes gradientShift1 {
       0% {
         background-position: 0% 50%;
       }
@@ -371,29 +370,59 @@
         background-position: 0% 50%;
       }
     }
+
+    @keyframes gradientShift2 {
+      0% {
+        background-position: 50% 0%;
+      }
+      50% {
+        background-position: 50% 100%;
+      }
+      100% {
+        background-position: 50% 0%;
+      }
+    }
+
     .card:nth-child(1) {
-      background: linear-gradient(145deg, rgba(102, 51, 102, 0.08), rgba(153, 102, 153, 0.05), rgba(102, 51, 102, 0.08));
-      animation-delay: 0s;
+      background: linear-gradient(145deg, rgba(102, 51, 102, 0.08), rgba(153, 102, 153, 0.05), rgba(102, 51, 102, 0.08)),
+                  linear-gradient(235deg, rgba(102, 51, 102, 0.05), rgba(153, 102, 153, 0.08), rgba(102, 51, 102, 0.05));
+      animation: gradientShift1 15s ease infinite, gradientShift2 20s ease infinite;
+      animation-delay: 0s, 0.5s;
     }
+
     .card:nth-child(2) {
-      background: linear-gradient(145deg, rgba(0, 51, 51, 0.08), rgba(0, 102, 102, 0.05), rgba(0, 51, 51, 0.08));
-      animation-delay: 1s;
+      background: linear-gradient(145deg, rgba(0, 51, 51, 0.08), rgba(0, 102, 102, 0.05), rgba(0, 51, 51, 0.08)),
+                  linear-gradient(235deg, rgba(0, 51, 51, 0.05), rgba(0, 102, 102, 0.08), rgba(0, 51, 51, 0.05));
+      animation: gradientShift1 15s ease infinite, gradientShift2 20s ease infinite;
+      animation-delay: 1s, 1.5s;
     }
+
     .card:nth-child(3) {
-      background: linear-gradient(145deg, rgba(102, 51, 102, 0.08), rgba(153, 102, 153, 0.05), rgba(102, 51, 102, 0.08));
-      animation-delay: 2s;
+      background: linear-gradient(145deg, rgba(102, 51, 102, 0.08), rgba(153, 102, 153, 0.05), rgba(102, 51, 102, 0.08)),
+                  linear-gradient(235deg, rgba(102, 51, 102, 0.05), rgba(153, 102, 153, 0.08), rgba(102, 51, 102, 0.05));
+      animation: gradientShift1 15s ease infinite, gradientShift2 20s ease infinite;
+      animation-delay: 2s, 2.5s;
     }
+
     .card:nth-child(4) {
-      background: linear-gradient(145deg, rgba(0, 51, 51, 0.08), rgba(0, 102, 102, 0.05), rgba(0, 51, 51, 0.08));
-      animation-delay: 3s;
+      background: linear-gradient(145deg, rgba(0, 51, 51, 0.08), rgba(0, 102, 102, 0.05), rgba(0, 51, 51, 0.08)),
+                  linear-gradient(235deg, rgba(0, 51, 51, 0.05), rgba(0, 102, 102, 0.08), rgba(0, 51, 51, 0.05));
+      animation: gradientShift1 15s ease infinite, gradientShift2 20s ease infinite;
+      animation-delay: 3s, 3.5s;
     }
+
     .card:nth-child(5) {
-      background: linear-gradient(145deg, rgba(102, 51, 102, 0.08), rgba(153, 102, 153, 0.05), rgba(102, 51, 102, 0.08));
-      animation-delay: 4s;
+      background: linear-gradient(145deg, rgba(102, 51, 102, 0.08), rgba(153, 102, 153, 0.05), rgba(102, 51, 102, 0.08)),
+                  linear-gradient(235deg, rgba(102, 51, 102, 0.05), rgba(153, 102, 153, 0.08), rgba(102, 51, 102, 0.05));
+      animation: gradientShift1 15s ease infinite, gradientShift2 20s ease infinite;
+      animation-delay: 4s, 4.5s;
     }
+
     .card:nth-child(6) {
-      background: linear-gradient(145deg, rgba(0, 51, 51, 0.08), rgba(0, 102, 102, 0.05), rgba(0, 51, 51, 0.08));
-      animation-delay: 5s;
+      background: linear-gradient(145deg, rgba(0, 51, 51, 0.08), rgba(0, 102, 102, 0.05), rgba(0, 51, 51, 0.08)),
+                  linear-gradient(235deg, rgba(0, 51, 51, 0.05), rgba(0, 102, 102, 0.08), rgba(0, 51, 51, 0.05));
+      animation: gradientShift1 15s ease infinite, gradientShift2 20s ease infinite;
+      animation-delay: 5s, 5.5s;
     }
     footer {
       text-align: center;
