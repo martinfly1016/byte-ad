@@ -1009,24 +1009,22 @@
     }
 
      // ⬇️ 控制箭头显示逻辑
-  document.addEventListener("DOMContentLoaded", function () {
-    const hero = document.querySelector('.hero');
-    const indicator = document.querySelector('.scroll-indicator');
+     document.addEventListener("DOMContentLoaded", function () {
+  const indicator = document.querySelector('.scroll-indicator');
 
-    function updateArrowVisibility() {
-      const heroHeight = hero.offsetHeight;
-      const viewportHeight = window.innerHeight;
+  function updateScrollIndicator() {
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
 
-      if (heroHeight >= viewportHeight * 0.9) {
-        indicator.style.opacity = '1';
-      } else {
-        indicator.style.opacity = '0';
-      }
+    if (scrollTop < 10) {
+      indicator.style.opacity = '1';
+    } else {
+      indicator.style.opacity = '0';
     }
+  }
 
-    updateArrowVisibility();
-    window.addEventListener('resize', updateArrowVisibility);
-  });
+  updateScrollIndicator(); // 页面加载时立即检查
+  window.addEventListener('scroll', updateScrollIndicator);
+});
   </script>
 </body>
 </html>
