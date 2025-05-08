@@ -707,6 +707,41 @@
       position: relative;
       z-index: 2;
     }
+
+    /* 箭头基础样式 */
+.scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  color: white;
+  animation: floatDown 2s infinite ease-in-out;
+  opacity: 0.8;
+  pointer-events: none;
+  z-index: 10;
+  display: none;
+}
+
+/* 浮动动画 */
+@keyframes floatDown {
+  0% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(8px);
+  }
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* 仅在移动端显示箭头 */
+@media (max-width: 768px) {
+  .scroll-indicator {
+    display: block;
+  }
+}
   </style>
 </head>
 <body>
@@ -733,6 +768,9 @@
     <h1 id="hero-title">デジタルマーケティングで、未来を創る</h1>
     <p id="hero-desc">革新的な戦略で、ブランドを次のステージへ</p>
     <a href="#contact" class="cta-button" id="hero-cta">Contact</a>
+    <div class="scroll-indicator">
+      ↓
+    </div>
   </section>
 
   <section id="services" class="section" style="margin-top: 10px;">
