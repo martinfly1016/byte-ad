@@ -737,38 +737,45 @@
 }
 
 /* 仅在移动端显示箭头 */
-@media (max-width: 768px) {
-  .scroll-indicator {
-  position: absolute;
-  bottom: 9rem;
+.scroll-indicator {
+  position: fixed;
+  bottom: 40px;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 2rem;
-  color: white;
   opacity: 0;
   transition: opacity 0.5s ease;
-  animation: floatDown 2s infinite ease-in-out;
   pointer-events: none;
-  z-index: 10;
+  z-index: 999;
+  display: none;
 }
 
+.scroll-indicator svg {
+  animation: floatArrow 2s ease-in-out infinite;
+  stroke: #ffffff;
+  width: 32px;
+  height: 32px;
+  opacity: 0.9;
+  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.3));
+}
+
+/* 移动端显示 */
 @media (max-width: 768px) {
   .scroll-indicator {
     display: block;
   }
 }
 
-@keyframes floatDown {
+/* 上下浮动动画 */
+@keyframes floatArrow {
   0% {
-    transform: translateX(-50%) translateY(0);
+    transform: translateY(0);
   }
   50% {
-    transform: translateX(-50%) translateY(8px);
+    transform: translateY(8px);
   }
   100% {
-    transform: translateX(-50%) translateY(0);
+    transform: translateY(0);
   }
-}
 }
   </style>
 </head>
@@ -796,7 +803,11 @@
     <h1 id="hero-title">デジタルマーケティングで、未来を創る</h1>
     <p id="hero-desc">革新的な戦略で、ブランドを次のステージへ</p>
     <a href="#contact" class="cta-button" id="hero-cta">Contact</a>
-    <div class="scroll-indicator">↓</div>
+    <div class="scroll-indicator" aria-hidden="true">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="arrow-svg">
+        <polyline points="6 9 12 15 18 9" />
+      </svg>
+    </div>
   </section>
 
   <section id="services" class="section" style="margin-top: 10px;">
