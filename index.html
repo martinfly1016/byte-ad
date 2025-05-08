@@ -1008,7 +1008,25 @@
       closeModal();
     }
 
-   
+     // ⬇️ 控制箭头显示逻辑
+  document.addEventListener("DOMContentLoaded", function () {
+    const hero = document.querySelector('.hero');
+    const indicator = document.querySelector('.scroll-indicator');
+
+    function updateArrowVisibility() {
+      const heroHeight = hero.offsetHeight;
+      const viewportHeight = window.innerHeight;
+
+      if (heroHeight >= viewportHeight * 0.9) {
+        indicator.style.opacity = '1';
+      } else {
+        indicator.style.opacity = '0';
+      }
+    }
+
+    updateArrowVisibility();
+    window.addEventListener('resize', updateArrowVisibility);
+  });
   </script>
 </body>
 </html>
