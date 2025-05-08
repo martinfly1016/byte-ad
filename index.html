@@ -17,6 +17,15 @@
       position: relative;
       box-sizing: border-box;
     }
+    .card-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    max-height: 200px;
+    }
     * {
       box-sizing: border-box;
       max-width: 100vw;
@@ -393,7 +402,11 @@
       background-color: #f7f7f7;
     }
     @media (max-width: 768px) {
-  
+      .card-image {
+       max-height: none;
+        height: auto;
+        object-fit: contain;
+      }
       body {
         overflow-x: hidden;
         width: 100%;
@@ -776,12 +789,12 @@
     <h2 id="cases-title">実績</h2>
     <div class="grid">
       <div class="card">
-        <img src="images/seo.png" alt="全球科技ブランドSEO优化" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;">
+        <img src="images/seo.png" alt="全球科技ブランドSEO优化" class="card-image">
         <h3>全球科技ブランドSEO最適化</h3>
         <p>キーワード調査とWebサイト最適化により、6ヶ月で自然検索トラフィックを156%増加、主要キーワード上位3位ランク数も200%増加。</p>
       </div>
       <div class="card">
-        <img src="images/brand.png" alt="时尚ブランドのSNSマーケティング" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;">
+        <img src="images/brand.png" alt="时尚ブランドのSNSマーケティング" class="card-image">
         <h3>ファッションブランドのSNSマーケティング</h3>
         <p>SNSキャンペーンを企画・運用し、3ヶ月でフォロワー数300%増加、ブランド話題の閲覧数が2000万回を突破。</p>
       </div>
