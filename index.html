@@ -168,7 +168,13 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.6));
+      background: linear-gradient(45deg, 
+        rgba(0, 0, 0, 0.6),
+        rgba(0, 0, 0, 0.3),
+        rgba(0, 0, 0, 0.6)
+      );
+      background-size: 200% 200%;
+      animation: heroGradient1 15s ease infinite;
       z-index: -1;
     }
     .hero::after {
@@ -177,8 +183,14 @@
       bottom: -2px;
       left: 0;
       width: 100%;
-      height: 100px;
-      background: linear-gradient(to bottom, transparent, #fff);
+      height: 100%;
+      background: linear-gradient(to bottom, 
+        transparent 0%,
+        rgba(255, 255, 255, 0.1) 50%,
+        #fff 100%
+      );
+      background-size: 200% 200%;
+      animation: heroGradient2 10s ease infinite;
       z-index: -1;
     }
     .hero.animate {
@@ -647,6 +659,29 @@
       .modal-content {
         padding: 20px;
         margin: 20px;
+      }
+    }
+    @keyframes heroGradient1 {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    @keyframes heroGradient2 {
+      0% {
+        background-position: 50% 0%;
+      }
+      50% {
+        background-position: 50% 100%;
+      }
+      100% {
+        background-position: 50% 0%;
       }
     }
   </style>
