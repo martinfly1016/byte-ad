@@ -16,10 +16,12 @@
       justify-content: space-between;
       align-items: center;
       padding: 1rem 2rem;
-      background-color: #f7f7f7;
+      background-color: rgba(247, 247, 247, 0.95);
+      backdrop-filter: blur(10px);
       position: sticky;
       top: 0;
       z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     }
     .logo {
       display: flex;
@@ -52,17 +54,36 @@
     nav a {
       text-decoration: none;
       color: #111;
+      position: relative;
+      padding: 0.5rem 0;
+      transition: color 0.3s ease;
+    }
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #00c9ff;
+      transition: width 0.3s ease;
+    }
+    nav a:hover {
+      color: #00c9ff;
+    }
+    nav a:hover::after {
+      width: 100%;
     }
     .hero {
       text-align: center;
       padding: 5rem 2rem;
-      background-image: url('https://byte-ad.com/images/bg1.webp');
+      background-image: url('https://byte-ad.com/images/bg.jpg');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
       position: relative;
       z-index: 1;
-      opacity: 0;
+      opacity: 1;
       transform: translateX(50px);
       transition: opacity 0.8s ease-out, transform 0.8s ease-out;
     }
@@ -73,7 +94,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(255, 255, 255, 0.4);
+      background: rgba(255, 255, 255, 0.1);
       z-index: -1;
     }
     .hero.animate {
@@ -85,6 +106,12 @@
       font-weight: 700;
       margin-bottom: 1rem;
       letter-spacing: 1px;
+      color: #ffffff;
+    }
+    .hero p {
+      color: #ffffff;
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
     }
     .cta-button {
       display: inline-block;
@@ -108,6 +135,25 @@
       transform: translateY(30px);
       transition: opacity 0.8s ease, transform 0.8s ease;
     }
+    .section h2 {
+      font-size: 2.2rem;
+      text-align: center;
+      margin-bottom: 3rem;
+      position: relative;
+      display: inline-block;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .section h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, #00c9ff, #92fe9d);
+      border-radius: 2px;
+    }
     .section.animate {
       opacity: 1;
       transform: translateY(0);
@@ -119,15 +165,42 @@
     }
     .card {
       flex: 1 1 calc(33.333% - 1rem);
-      background: linear-gradient(to bottom right, #ffffff, #f4f4f4);
-      padding: 1.5rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      background: linear-gradient(145deg, #ffffff, #f4f4f4);
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: 8px 8px 16px #e6e6e6, -8px -8px 16px #ffffff;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, rgba(0, 201, 255, 0.1), rgba(146, 254, 157, 0.1));
+      opacity: 0;
+      transition: opacity 0.3s ease;
     }
     .card:hover {
       transform: translateY(-6px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+      box-shadow: 12px 12px 20px #e6e6e6, -12px -12px 20px #ffffff;
+    }
+    .card:hover::before {
+      opacity: 1;
+    }
+    .card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+      color: #333;
+      position: relative;
+    }
+    .card p {
+      color: #666;
+      line-height: 1.6;
+      position: relative;
     }
     footer {
       text-align: center;
@@ -215,15 +288,15 @@
     </div>
   </section>
 
-  <section id="about" class="section" style="background-color: #000; color: #fff;">
-    <h2 id="about-title">会社概要</h2>
+  <section id="about" class="section" style="background-color: #663366; background-image: radial-gradient(#884488 1px, transparent 1px), radial-gradient(#884488 1px, transparent 1px); background-size: 10px 10px; background-position: 0 0, 5px 5px;">
+    <h2 id="about-title" style="color: #FFCCFF;">会社概要</h2>
     <div class="about-ceo" style="display: flex; flex-wrap: wrap; align-items: center; gap: 2rem; flex-direction: column; text-align: center;">
       <div class="ceo-photo" style="flex-shrink: 0;">
         <img src="https://byte-ad.com/images/IMG_0980.jpg" alt="CEO写真" style="width: 180px; height: 180px; object-fit: cover; border-radius: 50%;">
       </div>
       <div class="ceo-message" style="flex: 1; max-width: 600px;">
-        <h3>取締役 CEO</h3>
-        <p id="about-desc">
+        <h3 style="color: #FFCCFF;">取締役 CEO</h3>
+        <p id="about-desc" style="color: #FFCCFF;">
           超過15年以上の業界経験を持ち、インターネットマーケティングに対して非常に深い理解を有し、独自で効果的な実践手法を築き上げてきました。<br>
           ByteAdは、デジタルマーケティングの未来を切り拓くために設立されました。<br>
           私たちは、革新的な戦略と最先端の技術を駆使し、クライアントのブランド価値を最大化することを使命としています。<br>
@@ -250,19 +323,19 @@
     </div>
   </section>
 
-  <section id="contact" class="section" style="background-color: #4a4a4a !important; color: #fff;">
-    <h2 id="contact-title">お問い合わせ</h2>
-    <div class="contact-info" style="text-align: center; padding: 2rem 1rem;">
+  <section id="contact" class="section" style="background-color: #003333; background-image: radial-gradient(#006666 1px, transparent 1px), radial-gradient(#006666 1px, transparent 1px); background-size: 10px 10px; background-position: 0 0, 5px 5px;">
+    <h2 id="contact-title" style="color: #CCFFCC;">お問い合わせ</h2>
+    <div class="contact-info" style="text-align: center; padding: 2rem 1rem; color: #CCFFCC;">
       <p>名称：バイドアド株式会社</p>
       <p>設立：2024年6月</p>
       <p>本社：日本東東京都墨田区吾妻橋2-16-5 1F</p>
       <p>代表：喩 超</p>
-      <p>メール: <a href="mailto:yuchao@byte-ad.com" style="color: #a8e6cf;">yuchao@byte-ad.com</a></p>
+      <p>メール: <a href="mailto:yuchao@byte-ad.com" style="color: #CCFFCC;">yuchao@byte-ad.com</a></p>
     </div>
   </section>
 
-  <footer class="section">
-    <p>&copy; 2025 ByteAd. All rights reserved.</p>
+  <footer class="section" style="background: linear-gradient(to right, #003333, #663366); color: white; margin-top: 2rem; padding: 2rem;">
+    <p style="text-align: center; opacity: 0.9;">&copy; 2025 ByteAd. All rights reserved.</p>
   </footer>
 
   <script>
