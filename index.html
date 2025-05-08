@@ -952,7 +952,23 @@
       setTimeout(() => {
         hero.classList.add('animate-gradient');
       }, 100);
+      //增加箭头动画
+      const hero = document.querySelector('.hero');
+    const indicator = document.querySelector('.scroll-indicator');
 
+    function updateArrowVisibility() {
+      const heroHeight = hero.offsetHeight;
+      const viewportHeight = window.innerHeight;
+
+      if (heroHeight >= viewportHeight * 0.9) {
+        indicator.style.opacity = '1';
+      } else {
+        indicator.style.opacity = '0';
+      }
+    }
+
+    updateArrowVisibility();
+    window.addEventListener('resize', updateArrowVisibility);
       // 监听滚动事件
       let lastScrollTop = 0;
       let scrollTimeout;
@@ -1008,37 +1024,7 @@
       closeModal();
     }
 
-    document.addEventListener('DOMContentLoaded', function() {
-      const contactButtons = document.querySelectorAll('a[href="#contact"]');
-      contactButtons.forEach(button => {
-        button.addEventListener('click', function(e) {
-          e.preventDefault();
-          openModal();
-        });
-      });
-    });
-
-    document.addEventListener("DOMContentLoaded", function () {
-  const hero = document.querySelector('.hero');
-  const indicator = document.querySelector('.scroll-indicator');
-
-  function updateArrowVisibility() {
-    const heroHeight = hero.offsetHeight;
-    const viewportHeight = window.innerHeight;
-
-    if (heroHeight >= viewportHeight * 0.9) {
-      indicator.style.opacity = '1';
-    } else {
-      indicator.style.opacity = '0';
-    }
-  }
-
-  // 初始检测
-  updateArrowVisibility();
-
-  // 监听窗口变化
-  window.addEventListener('resize', updateArrowVisibility);
-});
+   
   </script>
 </body>
 </html>
