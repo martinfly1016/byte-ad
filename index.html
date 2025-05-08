@@ -174,7 +174,8 @@
         rgba(0, 0, 0, 0.6)
       );
       background-size: 200% 200%;
-      animation: heroGradient1 15s ease infinite;
+      animation: heroGradient1 15s ease forwards;
+      animation-play-state: paused;
       z-index: -1;
     }
     .hero::after {
@@ -190,7 +191,8 @@
         #fff 100%
       );
       background-size: 200% 200%;
-      animation: heroGradient2 10s ease infinite;
+      animation: heroGradient2 10s ease forwards;
+      animation-play-state: paused;
       z-index: -1;
     }
     .hero.animate {
@@ -888,6 +890,38 @@
       document.querySelectorAll('.hero, .section').forEach(el => {
         observer.observe(el);
       });
+
+      // 添加新的渐变动画控制
+      const hero = document.querySelector('.hero');
+      
+      // 页面加载时播放一次动画
+      setTimeout(() => {
+        hero.classList.add('animate-gradient');
+      }, 100);
+
+      // 监听滚动事件
+      let lastScrollTop = 0;
+      let scrollTimeout;
+
+      window.addEventListener('scroll', () => {
+        clearTimeout(scrollTimeout);
+        
+        scrollTimeout = setTimeout(() => {
+          const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+          
+          // 当滚动到顶部时（考虑一个小的阈值）
+          if (scrollTop < 50 && lastScrollTop > scrollTop) {
+            // 先移除类以重置动画
+            hero.classList.remove('animate-gradient');
+            // 强制重绘
+            void hero.offsetWidth;
+            // 重新添加类以触发动画
+            hero.classList.add('animate-gradient');
+          }
+          
+          lastScrollTop = scrollTop;
+        }, 50);
+      });
     });
 
     function toggleMenu() {
@@ -916,12 +950,10 @@
 
     function submitForm(event) {
       event.preventDefault();
-      // 这里添加表单提交逻辑
       alert('お問い合わせありがとうございます。\n内容を確認次第、担当者よりご連絡させていただきます。');
       closeModal();
     }
 
-    // 更新所有联系按钮的点击事件
     document.addEventListener('DOMContentLoaded', function() {
       const contactButtons = document.querySelectorAll('a[href="#contact"]');
       contactButtons.forEach(button => {
