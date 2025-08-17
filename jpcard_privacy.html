@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JP Card - 隐私政策</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #5856D6;
+        }
+
+        .app-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #5856D6, #007AFF);
+            border-radius: 16px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+
+        .update-date {
+            color: #666;
+            font-size: 14px;
+        }
+
+        h2 {
+            color: #5856D6;
+            margin: 30px 0 15px 0;
+            font-size: 20px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #eee;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        ul {
+            margin: 15px 0;
+            padding-left: 30px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .highlight {
+            background-color: #e3f2fd;
+            padding: 15px;
+            border-left: 4px solid #2196F3;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .contact-info {
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+
+        .language-switch {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .language-switch button {
+            background: #5856D6;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            margin: 0 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .language-switch button:hover {
+            background: #4947C7;
+        }
+
+        .language-switch button.active {
+            background: #34C759;
+        }
+
+        .english-content {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                padding: 15px;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+            
+            h2 {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="app-icon">JP</div>
+            <h1>JP Card 隐私政策</h1>
+            <div class="update-date">最后更新：2025年8月17日</div>
+        </div>
+
+        <div class="language-switch">
+            <button id="btn-chinese" class="active" onclick="switchLanguage('chinese')">中文</button>
+            <button id="btn-english" onclick="switchLanguage('english')">English</button>
+        </div>
+
+        <!-- 中文版本 -->
+        <div id="chinese-content" class="chinese-content">
+            <div class="highlight">
+                <strong>简要说明：</strong>JP Card 是一款注重隐私保护的日语学习应用。我们不收集、存储或传输您的个人信息。所有学习数据均保存在您的设备本地，AI服务由您自行配置管理。
+            </div>
+
+            <h2>1. 应用概述</h2>
+            <p>JP Card 是一款基于人工智能的日语学习卡片应用，帮助用户通过场景化学习方法掌握日语。本应用设计时充分考虑用户隐私保护，采用本地数据存储和用户自主配置的方式运行。</p>
+
+            <h2>2. 信息收集</h2>
+            <p><strong>我们不收集任何个人身份信息。</strong>具体包括：</p>
+            <ul>
+                <li>不收集您的姓名、邮箱、电话号码等个人信息</li>
+                <li>不收集设备标识符或位置信息</li>
+                <li>不收集您的学习内容或进度数据</li>
+                <li>不使用任何追踪技术或分析工具</li>
+                <li>不在应用中嵌入第三方广告或统计代码</li>
+            </ul>
+
+            <h2>3. 数据存储</h2>
+            <p>所有应用数据均存储在您的设备本地：</p>
+            <ul>
+                <li><strong>学习卡片数据：</strong>您创建的学习卡片、学习进度等信息存储在设备的本地数据库中</li>
+                <li><strong>应用设置：</strong>包括AI服务配置、界面偏好等设置信息</li>
+                <li><strong>API密钥：</strong>您配置的AI服务API密钥使用iOS系统的安全存储机制保存</li>
+                <li><strong>数据同步：</strong>应用不提供云同步功能，数据不会离开您的设备</li>
+            </ul>
+
+            <h2>4. 第三方服务</h2>
+            <p>JP Card 支持以下AI服务提供商，但需要您自行配置：</p>
+            <ul>
+                <li><strong>OpenAI：</strong>用于生成学习内容（需要您提供API密钥）</li>
+                <li><strong>Anthropic Claude：</strong>用于生成学习内容（需要您提供API密钥）</li>
+                <li><strong>Google Gemini：</strong>用于生成学习内容（需要您提供API密钥）</li>
+            </ul>
+            <p><strong>重要说明：</strong></p>
+            <ul>
+                <li>您的API密钥由您自行管理，我们无法访问</li>
+                <li>与AI服务的通信直接在您的设备和服务提供商之间进行</li>
+                <li>请参考各服务提供商的隐私政策了解数据处理方式</li>
+                <li>您可以随时更换或删除API密钥配置</li>
+            </ul>
+
+            <h2>5. 数据安全</h2>
+            <p>我们采取以下措施保护您的数据安全：</p>
+            <ul>
+                <li><strong>本地存储：</strong>所有数据存储在您的设备本地，受iOS系统安全机制保护</li>
+                <li><strong>加密存储：</strong>敏感信息（如API密钥）使用系统级加密存储</li>
+                <li><strong>无网络传输：</strong>除AI内容生成外，应用不进行任何网络数据传输</li>
+                <li><strong>定期更新：</strong>我们会定期更新应用以修复潜在的安全问题</li>
+            </ul>
+
+            <h2>6. 用户权利</h2>
+            <p>由于我们不收集您的个人信息，您享有以下权利：</p>
+            <ul>
+                <li><strong>数据控制：</strong>所有数据由您完全控制，存储在您的设备上</li>
+                <li><strong>删除权：</strong>您可以随时卸载应用来删除所有本地数据</li>
+                <li><strong>导出权：</strong>您可以通过应用功能导出学习数据</li>
+                <li><strong>配置权：</strong>您可以自由配置或删除AI服务设置</li>
+            </ul>
+
+            <h2>7. 儿童隐私</h2>
+            <p>JP Card 适合所有年龄段的用户使用。由于我们不收集任何个人信息，因此不存在儿童隐私问题。家长可以放心让孩子使用本应用进行日语学习。</p>
+
+            <h2>8. 政策更新</h2>
+            <p>我们可能会不定期更新本隐私政策。更新时，我们会：</p>
+            <ul>
+                <li>在应用中通知用户</li>
+                <li>更新本页面的"最后更新"日期</li>
+                <li>重大变更会在应用启动时特别提示</li>
+            </ul>
+
+            <h2>9. 联系我们</h2>
+            <div class="contact-info">
+                <p>如果您对本隐私政策有任何疑问或建议，请通过以下方式联系我们：</p>
+                <ul>
+                    <li><strong>邮箱：</strong>privacy@jpcard.app</li>
+                    <li><strong>应用内反馈：</strong>使用应用内的反馈功能</li>
+                </ul>
+                <p>我们承诺在收到您的询问后尽快回复。</p>
+            </div>
+        </div>
+
+        <!-- 英文版本 -->
+        <div id="english-content" class="english-content">
+            <div class="highlight">
+                <strong>Summary:</strong> JP Card is a privacy-focused Japanese learning app. We do not collect, store, or transmit your personal information. All learning data is saved locally on your device, and AI services are configured and managed by you.
+            </div>
+
+            <h2>1. App Overview</h2>
+            <p>JP Card is an AI-powered Japanese learning card application that helps users master Japanese through scenario-based learning methods. This app is designed with full consideration for user privacy protection, operating through local data storage and user-autonomous configuration.</p>
+
+            <h2>2. Information Collection</h2>
+            <p><strong>We do not collect any personally identifiable information.</strong> Specifically:</p>
+            <ul>
+                <li>We do not collect your name, email, phone number, or other personal information</li>
+                <li>We do not collect device identifiers or location information</li>
+                <li>We do not collect your learning content or progress data</li>
+                <li>We do not use any tracking technologies or analytics tools</li>
+                <li>We do not embed third-party advertisements or statistics code in the app</li>
+            </ul>
+
+            <h2>3. Data Storage</h2>
+            <p>All app data is stored locally on your device:</p>
+            <ul>
+                <li><strong>Learning Card Data:</strong> Study cards you create, learning progress, and other information are stored in the device's local database</li>
+                <li><strong>App Settings:</strong> Including AI service configuration, interface preferences, and other settings</li>
+                <li><strong>API Keys:</strong> AI service API keys you configure are saved using iOS system's secure storage mechanism</li>
+                <li><strong>Data Sync:</strong> The app does not provide cloud sync functionality; data never leaves your device</li>
+            </ul>
+
+            <h2>4. Third-Party Services</h2>
+            <p>JP Card supports the following AI service providers, but requires your own configuration:</p>
+            <ul>
+                <li><strong>OpenAI:</strong> For generating learning content (requires your API key)</li>
+                <li><strong>Anthropic Claude:</strong> For generating learning content (requires your API key)</li>
+                <li><strong>Google Gemini:</strong> For generating learning content (requires your API key)</li>
+            </ul>
+            <p><strong>Important Notes:</strong></p>
+            <ul>
+                <li>Your API keys are managed by you; we cannot access them</li>
+                <li>Communication with AI services occurs directly between your device and the service providers</li>
+                <li>Please refer to each service provider's privacy policy to understand their data processing methods</li>
+                <li>You can change or delete API key configurations at any time</li>
+            </ul>
+
+            <h2>5. Data Security</h2>
+            <p>We take the following measures to protect your data security:</p>
+            <ul>
+                <li><strong>Local Storage:</strong> All data is stored locally on your device, protected by iOS system security mechanisms</li>
+                <li><strong>Encrypted Storage:</strong> Sensitive information (such as API keys) is stored using system-level encryption</li>
+                <li><strong>No Network Transmission:</strong> Except for AI content generation, the app does not perform any network data transmission</li>
+                <li><strong>Regular Updates:</strong> We regularly update the app to fix potential security issues</li>
+            </ul>
+
+            <h2>6. User Rights</h2>
+            <p>Since we do not collect your personal information, you have the following rights:</p>
+            <ul>
+                <li><strong>Data Control:</strong> All data is completely controlled by you and stored on your device</li>
+                <li><strong>Right to Deletion:</strong> You can delete all local data at any time by uninstalling the app</li>
+                <li><strong>Right to Export:</strong> You can export learning data through app functionality</li>
+                <li><strong>Configuration Rights:</strong> You can freely configure or delete AI service settings</li>
+            </ul>
+
+            <h2>7. Children's Privacy</h2>
+            <p>JP Card is suitable for users of all ages. Since we do not collect any personal information, there are no children's privacy concerns. Parents can safely allow their children to use this app for Japanese learning.</p>
+
+            <h2>8. Policy Updates</h2>
+            <p>We may update this privacy policy from time to time. When updating, we will:</p>
+            <ul>
+                <li>Notify users within the app</li>
+                <li>Update the "Last Updated" date on this page</li>
+                <li>Provide special prompts for major changes when the app starts</li>
+            </ul>
+
+            <h2>9. Contact Us</h2>
+            <div class="contact-info">
+                <p>If you have any questions or suggestions about this privacy policy, please contact us through:</p>
+                <ul>
+                    <li><strong>Email:</strong> privacy@jpcard.app</li>
+                    <li><strong>In-App Feedback:</strong> Use the feedback function within the app</li>
+                </ul>
+                <p>We promise to reply as soon as possible after receiving your inquiry.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function switchLanguage(language) {
+            const chineseContent = document.getElementById('chinese-content');
+            const englishContent = document.getElementById('english-content');
+            const chineseBtn = document.getElementById('btn-chinese');
+            const englishBtn = document.getElementById('btn-english');
+
+            if (language === 'chinese') {
+                chineseContent.style.display = 'block';
+                englishContent.style.display = 'none';
+                chineseBtn.classList.add('active');
+                englishBtn.classList.remove('active');
+            } else {
+                chineseContent.style.display = 'none';
+                englishContent.style.display = 'block';
+                chineseBtn.classList.remove('active');
+                englishBtn.classList.add('active');
+            }
+        }
+
+        // 默认显示中文
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('chinese-content').style.display = 'block';
+        });
+    </script>
+</body>
+</html>
