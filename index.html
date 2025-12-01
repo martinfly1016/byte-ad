@@ -777,6 +777,81 @@
     transform: translateY(0);
   }
 }
+
+/* 合作客户区域 */
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  padding: 1rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.partner-card {
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+}
+
+.partner-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.partner-icon {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 0.8rem auto;
+  border-radius: 8px;
+}
+
+.partner-card h4 {
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+  color: #1a1a1a;
+  font-weight: 600;
+}
+
+.partner-card p {
+  font-size: 0.85rem;
+  color: #666;
+  margin: 0;
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .partners-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .partner-card {
+    padding: 1rem;
+  }
+
+  .partner-icon {
+    font-size: 2rem;
+  }
+
+  .partner-card h4 {
+    font-size: 0.95rem;
+  }
+
+  .partner-card p {
+    font-size: 0.8rem;
+  }
+}
   </style>
 </head>
 <body>
@@ -807,6 +882,32 @@
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="arrow-svg">
         <polyline points="6 9 12 15 18 9" />
       </svg>
+    </div>
+  </section>
+
+  <section id="partners" class="section" style="background-color: #222222; padding-top: 4rem; padding-bottom: 3rem;">
+    <h2 style="color: #FFFFFF; background: none; -webkit-background-clip: unset; -webkit-text-fill-color: unset;">パートナー</h2>
+    <div class="partners-grid">
+      <a href="https://www.genhub.jp" target="_blank" class="partner-card">
+        <img src="images/logo_gh.png" alt="genhub.jp" class="partner-icon">
+        <h4>genhub.jp</h4>
+        <p>業界をリードするAI画像生成ツール</p>
+      </a>
+      <a href="https://prompta.jp" target="_blank" class="partner-card">
+        <img src="images/logo_prompta.png" alt="prompta.jp" class="partner-icon">
+        <h4>prompta.jp</h4>
+        <p>AI活用事例の百科事典</p>
+      </a>
+      <a href="https://mojimoon.com" target="_blank" class="partner-card">
+        <img src="images/logo_moon.png" alt="mojimoon.com" class="partner-icon">
+        <h4>mojimoon.com</h4>
+        <p>最も使いやすい月文字ジェネレーター</p>
+      </a>
+      <a href="https://apps.apple.com/jp/app/%E6%97%A5%E8%AF%AD%E5%AD%A6%E4%B9%A0%E5%8D%A1%E7%89%87/id6751157703" target="_blank" class="partner-card">
+        <img src="images/logo_card.png" alt="日语学习卡片" class="partner-icon">
+        <h4>日本語学習カード</h4>
+        <p>AI搭載の日本語学習アプリ</p>
+      </a>
     </div>
   </section>
 
@@ -937,7 +1038,6 @@
       </form>
     </div>
   </div>
-<span align="center">友情链接：<a href="https://mojimoon.com/" target="_blank">MojiMoon</a></span>
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const observer = new IntersectionObserver(entries => {
