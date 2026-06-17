@@ -10,7 +10,7 @@ const CONFIG = {
     contact: {
         email: 'yuchao@byte-ad.com',
         phone: '+81090-67022476',
-        address: '日本东京都墨田区吾妻桥2-16-5 1F'
+        address: '〒151-0053 東京都渋谷区代々木一丁目３０番１４天翔代々木ＡＮＮＥＸビル３階３１１号室'
     },
 
     // 社交媒体链接
