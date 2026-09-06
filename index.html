@@ -852,6 +852,119 @@
     font-size: 0.8rem;
   }
 }
+
+/* 大事记 / マイルストーン */
+.timeline {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 2.5rem;
+  top: 0.6rem;
+  bottom: 0.6rem;
+  width: 2px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.08));
+}
+
+.timeline-item {
+  position: relative;
+  padding-left: 2.5rem;
+  padding-bottom: 2.2rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2rem;
+}
+
+.timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -0.44rem;
+  top: 0.45rem;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.12);
+}
+
+.timeline-body {
+  flex: 1;
+}
+
+.timeline-date {
+  display: block;
+  font-size: 0.85rem;
+  color: #9aa0a6;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.35rem;
+}
+
+.timeline-body h4 {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 1.5;
+}
+
+.timeline-body p {
+  margin: 0.35rem 0 0 0;
+  font-size: 0.88rem;
+  color: #b0b0b0;
+  line-height: 1.6;
+}
+
+.timeline-badge {
+  width: 78px;
+  height: auto;
+  flex-shrink: 0;
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 6px;
+}
+
+@media (max-width: 768px) {
+  .timeline {
+    padding: 0 1rem;
+  }
+
+  .timeline::before {
+    left: 1.5rem;
+  }
+
+  .timeline-item {
+    padding-left: 1.6rem;
+    padding-bottom: 1.8rem;
+    gap: 0.8rem;
+  }
+
+  .timeline-item::before {
+    left: -0.3rem;
+    width: 10px;
+    height: 10px;
+  }
+
+  .timeline-body h4 {
+    font-size: 0.95rem;
+  }
+
+  .timeline-body p {
+    font-size: 0.82rem;
+  }
+
+  .timeline-badge {
+    width: 58px;
+  }
+}
   </style>
 </head>
 <body>
@@ -918,6 +1031,41 @@
         <h4>日本語学習カード</h4>
         <p>AI搭載の日本語学習アプリ</p>
       </a>
+    </div>
+  </section>
+
+  <section id="milestones" class="section" style="background-color: #222222; padding-top: 1rem; padding-bottom: 4rem;">
+    <h2 style="color: #FFFFFF; background: none; -webkit-background-clip: unset; -webkit-text-fill-color: unset;">マイルストーン</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-body">
+          <span class="timeline-date">2026年8月</span>
+          <h4>KidsAI が Educational App Store の5つ星認証を取得</h4>
+          <p>教育専門家による独立審査で最高評価の5つ星を獲得しました。</p>
+        </div>
+        <img src="images/cert_eas.webp" alt="Educational App Store Certified 2026" class="timeline-badge">
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-body">
+          <span class="timeline-date">2026年7月</span>
+          <h4>KidsAI iOS アプリを App Store でリリース</h4>
+          <p>16の国と地域で配信を開始しました。</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-body">
+          <span class="timeline-date">2026年4月</span>
+          <h4>KidsAI に動画生成機能を追加</h4>
+          <p>子供の描いた絵がそのまま動き出す、画像から動画への生成機能をリリースしました。</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-body">
+          <span class="timeline-date">2026年4月</span>
+          <h4>AI OCR サービス ocrjp.com を公開</h4>
+          <p>登録不要・無料で使える日本語 OCR ツールの提供を開始しました。</p>
+        </div>
+      </div>
     </div>
   </section>
 
